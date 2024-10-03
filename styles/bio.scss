@@ -1,3 +1,18 @@
-@use "./partials/typography";
-@use "./partials/variables";
-@use "./partials/mixins";
+@use "./partials/typography" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+   background-color:$primary-color-bandSite-Black; 
+}
+
+.header-logo__img {
+    height: 1.25rem;
+    width: 7.5rem;
+}

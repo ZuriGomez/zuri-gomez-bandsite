@@ -12,4 +12,18 @@
   font-family: "Avenir-Next";
   src: url("../../assets/Font/AvenirNextLTPro-Bold.otf");
   font-weight: 700;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #323232;
+}
+
+.header-logo__img {
+  height: 1.25rem;
+  width: 7.5rem;
 }/*# sourceMappingURL=bio.css.map */
