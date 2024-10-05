@@ -84,14 +84,14 @@ header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding-top:3rem;
+        padding-top:1rem;
         gap:4rem;
     }
 
     .header-logo {
         display: flex;
         justify-content: center;
-        padding-top: 2rem;
+        padding-top: 1rem;
         padding-bottom:2rem;
 
         @include tablet {
@@ -135,7 +135,7 @@ header {
 
             @include tablet {
                 width:auto;
-                gap:3rem;
+                gap:4rem;
                 align-items: flex-end;
             }
             
@@ -328,12 +328,14 @@ header {
         padding-top: 3rem;
         padding-left: 3rem;
         padding-right: 3rem;
+        padding-bottom: 3rem;
     }
 
     .section-gallery__title {
         text-align: left;
         line-height: $line-height-m-section-header;
         padding-bottom: 1rem;
+        font-weight: 600;
 
         @include tablet {
             font-weight: 600;
@@ -346,9 +348,22 @@ header {
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
+        margin:0;
+
+        @include tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content:space-evenly;
+            gap:2rem;
+        }
     
         .section-gallery__image {
-            padding-top: 0.5rem;
+            padding: 0;
+
+            @include tablet {
+                width:30%;
+            }
         }
     }
 }
@@ -362,86 +377,129 @@ footer {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top:2rem;
+    z-index: 1;
+    position: relative;
 
-    .section-social {
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-
-        .section-social__title{
-            line-height: $line-height-m-section-header;
-            padding-bottom: 1.5rem;
-        }
-
-        .section-social__icons {
-        display: flex;
-        justify-content: left;
-        gap: 3rem;
-
-            .section-social__icon {
-                height: 1.5625rem;
-            }
-        }
+    @include tablet {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top:3rem;
     }
-
-    .section-contacts {
+    
+    .footer-section__contact {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        padding-top: 2rem;
-
-        .section-contact {
+    
+        .section-social {
             display: flex;
             flex-direction: column;
-            padding-top:0.5rem;
+            justify-content: left;
 
-            .section-contact__title{
-                line-height: $line-height-m-footer-copy;
-                font-weight: 700;
-                padding-bottom: .5rem;
+            @include tablet {
+                flex-direction: row;
+                gap:3rem;
+                padding-bottom: 2rem;
             }
 
-            .section-contact__address,
-            .section-contact__booking {
+            .section-social__title{
+                font-size: $font-size-mobile-section-header;
+                line-height: $line-height-m-section-header;
+                padding-bottom: 1.5rem;
+                color: $primary-color-White;
+                font-weight: 600;
+
+                @include tablet {
+                    font-size: $font-size-desktop_tablet-section-header;
+                    padding-bottom: 0;
+                }
+            }
+
+            .section-social__icons {
+            display: flex;
+            justify-content: left;
+            gap: 3rem;
+
+                .section-social__icon {
+                    height: 1.5625rem;
+                }
+            }
+        }
+
+        .section-contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-top: 2rem;
+
+            @include tablet {
+                padding:0;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .section-contact {
                 display: flex;
                 flex-direction: column;
-                margin: 0;
-                padding: 0;
-                line-height: $line-height-m-footer-copy;
+                padding-top:0.5rem;
 
-                p {
-                    margin: 0;
+                .section-contact__title{
+                    line-height: $line-height-m-footer-copy;
+                    font-weight: 700;
+                    padding-bottom: 1rem;
                 }
-            }
 
-            .section-contact__email {
-                margin-top: 1rem;
-                
-                p {
+                .section-contact__address,
+                .section-contact__booking {
+                    display: flex;
+                    flex-direction: column;
                     margin: 0;
+                    padding: 0;
+                    line-height: $line-height-m-footer-copy;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                .section-contact__email {
+                    margin-top: 1rem;
+                    
+                    p {
+                        margin: 0;
+                    }
                 }
             }
         }
+
     }
 
-    .footer-logo {
-        display: flex;
-        justify-content: left;
-        padding-top: 2rem;
+    .footer__logo {
+        width: 8rem;
+        margin: 0;
+        position:absolute;
+        bottom:5rem;
+        left:1rem;
+        z-index:2;
 
-        .footer-logo__img {
-            width: 8rem;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+        @include tablet {
+            position: absolute;
+            left:47rem;
+            bottom:16.5rem;
+            padding-top: 5rem;
+            z-index: 2;
+            margin: 0;
         }
+
     }
+    
+    .copyright__message {
+        padding-top: 5rem;
+        padding-bottom: 2rem;
 
-    .footer-copyright {
-        display: flex;
-        justify-content: left;
-
-        .footer-copyright__detail {
+        @include tablet {
             padding-bottom: 3rem;
+            padding-top:3rem;
         }
     }
+
 }
