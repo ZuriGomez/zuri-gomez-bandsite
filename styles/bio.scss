@@ -2,8 +2,7 @@
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
 
-html,
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -25,6 +24,7 @@ h3 {
 p {
   font-family: $avenir-next-regular;
   font-weight: 400;
+  font-size: $font-size-mobile-body-copy;
 }
 
 header {
@@ -37,18 +37,20 @@ header {
     .header-logo {
         display: flex;
         justify-content: center;
-        padding: 2rem 0; 
+        padding-top:2rem;
+        padding-bottom:1rem; 
 
         .header-logo__img {
             display: block;
-            height: 2rem;
+            width:8rem;
         }
     }
 
     .nav-bar {
         display: flex;
         justify-content: center;
-        width: auto;
+        width: 100%;
+        box-sizing: border-box;
     
         .nav-bar__list {
             text-decoration: none;
@@ -56,21 +58,22 @@ header {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            width:auto;
+            width:100%;
             padding: 0;
             margin: 0;
-            align-items: flex-end;
+            align-items: center;
             
             .nav-bar__item {
-                font-size: 1.5rem;
-                font-family: $avenir-next-bold;
+                font-size: .625rem;
+                line-height: $line-height-m-labelsnbuttons;
+                font-family: $avenir-next-demi;
                 font-weight: 600;
                 color: $primary-color-White;
-                padding: 1rem 15vw;
+                padding-bottom: 0.5rem;
+                width:50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                min-width: 10rem;
                 
                 &:hover,
                 &:active {
@@ -104,7 +107,7 @@ header {
 }
 
 .hero {
-  background-image: url(../assets/Images/hero-bio.jpg);
+  background-image: linear-gradient(rgba(50,50,50,0.5),rgba(50,50,50,0.5)), url(../assets/Images/hero-bio.jpg);
   background-size: cover;
   justify-content: center;
   align-items: center;
@@ -116,6 +119,7 @@ header {
         color: $primary-color-White;
         padding-left: 1rem;
         font-size:$font-size-mobile-page-header;
+        line-height: $line-height-m-page-header;
     }
 }
 
@@ -129,8 +133,9 @@ header {
 
     .section-about__title {
         color: $primary-color-bandSite-Black;
-        padding-top: 1.5rem;
+        padding-top: 2rem;
         padding-bottom: 1rem;
+        line-height: $line-height-m-section-header;
     }
 
     .section-about__items {
@@ -148,16 +153,40 @@ header {
             flex-direction: column;
             justify-content: center;
             padding-top: 1rem;
-            padding-bottom: 0;
+            padding-bottom: 1rem;
             color: $primary-color-bandSite-Black;
         
             .block-quote__paragraph {
                 margin-bottom: 0;
                 font-weight: 600;
+                padding-bottom: 1rem;
+                line-height:$line-height-m-body-copy;
             }
             
             .block-quote__name {
                 font-weight: 600;
+                line-height: $line-height-m-body-copy;
+            }
+        }
+
+        .block-biography {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top:1rem;
+            padding-bottom: 1rem;
+
+            .block-biography__title {
+                padding-bottom: 1rem;
+            }
+            
+            .block-biography__firstparagragh {
+                line-height: $line-height-m-body-copy;
+                padding-bottom: 1rem;
+            }
+            
+            .block-biography__secondparagragh {
+                line-height: $line-height-m-body-copy;
             }
         }
     }
@@ -165,12 +194,13 @@ header {
 
 
 .section-gallery {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 2rem;
+  padding: 2rem 1rem;
+  background-color: $secondary-color-alabaster;
 
     .section-gallery__title {
         text-align: left;
+        line-height: $line-height-m-section-header;
+        padding-bottom: 1rem;
     }
 
     .section-gallery__images {
@@ -193,19 +223,25 @@ footer {
     justify-content: center;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top:2rem;
 
     .section-social {
         display: flex;
         flex-direction: column;
         justify-content: left;
 
+        .section-social__title{
+            line-height: $line-height-m-section-header;
+            padding-bottom: 1.5rem;
+        }
+
         .section-social__icons {
         display: flex;
         justify-content: left;
-        gap: 4rem;
+        gap: 3rem;
 
             .section-social__icon {
-                height: 3.125rem;
+                height: 1.5625rem;
             }
         }
     }
@@ -219,6 +255,13 @@ footer {
         .section-contact {
             display: flex;
             flex-direction: column;
+            padding-top:0.5rem;
+
+            .section-contact__title{
+                line-height: $line-height-m-body-footer;
+                font-weight: 700;
+                padding-bottom: .5rem;
+            }
 
             .section-contact__address,
             .section-contact__booking {
@@ -226,6 +269,7 @@ footer {
                 flex-direction: column;
                 margin: 0;
                 padding: 0;
+                line-height: $line-height-m-body-footer;
 
                 p {
                     margin: 0;
@@ -245,10 +289,10 @@ footer {
     .footer-logo {
         display: flex;
         justify-content: left;
-        padding-top: 3rem;
+        padding-top: 2rem;
 
         .footer-logo__img {
-            height: 2rem;
+            width: 8rem;
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
