@@ -106,7 +106,7 @@ header {
 
         .header-logo__img {
             display: block;
-            width:10rem;
+            width:12rem;
         
             @include tablet {
                 width: 15rem;
@@ -275,7 +275,7 @@ header {
                 margin-bottom: 0;
                 font-weight: 600;
                 padding-bottom: 1rem;
-                letter-spacing: 0.08rem;
+                letter-spacing: 0.05rem;
             
                 @include tablet {
                     font-size: 1.2rem;
@@ -392,7 +392,11 @@ header {
             flex-wrap: wrap;
             justify-content: space-between;
             align-content:space-evenly;
-            gap:2rem;
+            gap:1rem;
+        }
+
+        @include desktop {
+            gap:1rem;
         }
     
         .section-gallery__image {

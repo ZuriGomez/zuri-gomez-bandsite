@@ -128,7 +128,7 @@ header .header-logo {
 }
 header .header-logo .header-logo__img {
   display: block;
-  width: 10rem;
+  width: 12rem;
 }
 @media screen and (min-width: 768px) {
   header .header-logo .header-logo__img {
@@ -292,7 +292,7 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   margin-bottom: 0;
   font-weight: 600;
   padding-bottom: 1rem;
-  letter-spacing: 0.08rem;
+  letter-spacing: 0.05rem;
 }
 @media screen and (min-width: 768px) {
   .section-about .section-about__items .block-quote .block-quote__paragraph {
@@ -412,7 +412,12 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-evenly;
-    gap: 2rem;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section-gallery .section-gallery__images {
+    gap: 1rem;
   }
 }
 .section-gallery .section-gallery__images .section-gallery__image {
