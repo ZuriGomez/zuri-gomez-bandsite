@@ -401,6 +401,12 @@ header {
     
         .section-gallery__image {
             padding: 0;
+            filter: grayscale(100%);
+            transition: filter 0.1s ease;
+
+            &:hover {
+                filter: grayscale(0%);
+            }
 
             @include tablet {
                 width:30%;

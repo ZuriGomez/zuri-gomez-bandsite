@@ -422,6 +422,11 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
 }
 .section-gallery .section-gallery__images .section-gallery__image {
   padding: 0;
+  filter: grayscale(100%);
+  transition: filter 0.1s ease;
+}
+.section-gallery .section-gallery__images .section-gallery__image:hover {
+  filter: grayscale(0%);
 }
 @media screen and (min-width: 768px) {
   .section-gallery .section-gallery__images .section-gallery__image {
