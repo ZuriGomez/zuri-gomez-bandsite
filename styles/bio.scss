@@ -95,9 +95,13 @@ header {
         padding-bottom:2rem;
 
         @include tablet {
-            padding-left: 2.25rem;
+            padding-left: 3rem;
             padding-right: 2rem;
             padding-bottom: 2rem;
+        }
+
+        @include desktop {
+            padding-left: 4rem;
         }
 
         .header-logo__img {
@@ -143,9 +147,9 @@ header {
                 font-size: $font-size-mobile-subheader;
                 line-height: $line-height-m-subheader;
                 font-family: $avenir-next-demi;
-                font-weight: 600;
+                font-weight: 400;
                 color: $primary-color-White;
-                padding-bottom: 0.5rem;
+                padding-bottom: 1rem;
                 width:50%;
                 display: flex;
                 justify-content: center;
@@ -206,6 +210,10 @@ header {
             padding-left: 3rem;
         }
 
+        @include desktop {
+            padding-left: 4rem;
+            font-weight: 600;
+        }
     }
 }
 
@@ -222,6 +230,11 @@ header {
         padding-right: 3rem;
     }
 
+    @include desktop {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
     .section-about__title {
         color: $primary-color-bandSite-Black;
         font-weight: 600;
@@ -232,6 +245,7 @@ header {
             padding-top: 3rem;
             padding-bottom: 2.25rem;
         }
+
     }
 
     .section-about__items {
@@ -263,10 +277,16 @@ header {
                 padding-bottom: 1rem;
                 letter-spacing: 0.08rem;
             
-            
                 @include tablet {
-                    font-size: 1.5rem;
-                    letter-spacing: 0.110rem;
+                    font-size: 1.2rem;
+                    line-height: $line-height-d-t-body-copy;
+                    letter-spacing: 0.05rem;
+                }
+
+                @include desktop {
+                    font-size: 1.2rem;
+                    letter-spacing: 0;
+                    padding-top: 1rem;
                 }
             }
             
@@ -278,12 +298,22 @@ header {
                     font-size: 1.2rem;
                     letter-spacing: 0;
                 }
+
+                @include desktop {
+                    font-size: 1rem;
+                    padding-top: .5rem;
+                    font-weight: 600;
+                }
             }
         }
 
         .block-biography__title {
             padding-bottom: 1rem;
             padding-top: 2rem;
+
+            @include desktop {
+                font-weight: 400;
+            }
         }
 
         .block-biography {
@@ -295,10 +325,13 @@ header {
 
             @include tablet {
                 flex-direction: row;
-                // justify-content: space-between;
                 gap:1.5rem;
             }
             
+            @include desktop {
+                gap: 2rem;
+            }
+
             .block-biography__firstparagragh {
                 line-height: $line-height-m-body-copy;
                 padding-bottom: 1rem;
@@ -329,6 +362,10 @@ header {
         padding-left: 3rem;
         padding-right: 3rem;
         padding-bottom: 3rem;
+    }
+
+    @include desktop {
+        padding:4rem;
     }
 
     .section-gallery__title {
@@ -415,9 +452,13 @@ footer {
             }
 
             .section-social__icons {
-            display: flex;
-            justify-content: left;
-            gap: 3rem;
+                display: flex;
+                justify-content: left;
+                gap: 3rem;
+
+                @include desktop {
+                    gap:2rem;
+                }
 
                 .section-social__icon {
                     height: 1.5625rem;
@@ -435,6 +476,11 @@ footer {
                 padding:0;
                 flex-direction: row;
                 justify-content: space-between;
+            }
+
+            @include desktop {
+                gap:4rem;
+                justify-content: flex-start;
             }
 
             .section-contact {
@@ -484,6 +530,15 @@ footer {
         @include tablet {
             position: absolute;
             left:47rem;
+            bottom:16.5rem;
+            padding-top: 5rem;
+            z-index: 2;
+            margin: 0;
+        }
+
+        @include desktop {
+            position: absolute;
+            left:60rem;
             bottom:16.5rem;
             padding-top: 5rem;
             z-index: 2;

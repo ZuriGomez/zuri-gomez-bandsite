@@ -116,9 +116,14 @@ header .header-logo {
 }
 @media screen and (min-width: 768px) {
   header .header-logo {
-    padding-left: 2.25rem;
+    padding-left: 3rem;
     padding-right: 2rem;
     padding-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .header-logo {
+    padding-left: 4rem;
   }
 }
 header .header-logo .header-logo__img {
@@ -165,9 +170,9 @@ header .nav-bar .nav-bar__list .nav-bar__item {
   font-size: 1.5rem;
   line-height: 1.375rem;
   font-family: "Avenir-Next";
-  font-weight: 600;
+  font-weight: 400;
   color: #ffffff;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   width: 50%;
   display: flex;
   justify-content: center;
@@ -221,6 +226,12 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
     padding-left: 3rem;
   }
 }
+@media screen and (min-width: 1024px) {
+  .hero .hero__title {
+    padding-left: 4rem;
+    font-weight: 600;
+  }
+}
 
 .section-about {
   padding-left: 1rem;
@@ -234,6 +245,12 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   .section-about {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section-about {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 .section-about .section-about__title {
@@ -279,8 +296,16 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
 }
 @media screen and (min-width: 768px) {
   .section-about .section-about__items .block-quote .block-quote__paragraph {
-    font-size: 1.5rem;
-    letter-spacing: 0.11rem;
+    font-size: 1.2rem;
+    line-height: 1.375rem;
+    letter-spacing: 0.05rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section-about .section-about__items .block-quote .block-quote__paragraph {
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    padding-top: 1rem;
   }
 }
 .section-about .section-about__items .block-quote .block-quote__name {
@@ -293,9 +318,21 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
     letter-spacing: 0;
   }
 }
+@media screen and (min-width: 1024px) {
+  .section-about .section-about__items .block-quote .block-quote__name {
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    font-weight: 600;
+  }
+}
 .section-about .section-about__items .block-biography__title {
   padding-bottom: 1rem;
   padding-top: 2rem;
+}
+@media screen and (min-width: 1024px) {
+  .section-about .section-about__items .block-biography__title {
+    font-weight: 400;
+  }
 }
 .section-about .section-about__items .block-biography {
   display: flex;
@@ -308,6 +345,11 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   .section-about .section-about__items .block-biography {
     flex-direction: row;
     gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section-about .section-about__items .block-biography {
+    gap: 2rem;
   }
 }
 .section-about .section-about__items .block-biography .block-biography__firstparagragh {
@@ -338,6 +380,11 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
     padding-left: 3rem;
     padding-right: 3rem;
     padding-bottom: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section-gallery {
+    padding: 4rem;
   }
 }
 .section-gallery .section-gallery__title {
@@ -430,6 +477,11 @@ footer .footer-section__contact .section-social .section-social__icons {
   justify-content: left;
   gap: 3rem;
 }
+@media screen and (min-width: 1024px) {
+  footer .footer-section__contact .section-social .section-social__icons {
+    gap: 2rem;
+  }
+}
 footer .footer-section__contact .section-social .section-social__icons .section-social__icon {
   height: 1.5625rem;
 }
@@ -444,6 +496,12 @@ footer .footer-section__contact .section-contacts {
     padding: 0;
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1024px) {
+  footer .footer-section__contact .section-contacts {
+    gap: 4rem;
+    justify-content: flex-start;
   }
 }
 footer .footer-section__contact .section-contacts .section-contact {
@@ -486,6 +544,16 @@ footer .footer__logo {
   footer .footer__logo {
     position: absolute;
     left: 47rem;
+    bottom: 16.5rem;
+    padding-top: 5rem;
+    z-index: 2;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  footer .footer__logo {
+    position: absolute;
+    left: 60rem;
     bottom: 16.5rem;
     padding-top: 5rem;
     z-index: 2;
