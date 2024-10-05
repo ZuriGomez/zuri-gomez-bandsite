@@ -8,23 +8,69 @@
   box-sizing: border-box;
 }
 
-h1,
+h1 {
+    font-family: $avenir-next-bold;
+    font-weight: 700;
+    font-size: $font-size-mobile-page-header;
+    line-height: 2rem;
+
+    @include tablet {
+        font-size: $font-size-desktop_tablet-page-header;
+        line-height:$line-height-d-t-page-header;
+    }
+
+    @include desktop {
+        font-size: $font-size-desktop_tablet-page-header;
+        line-height: $line-height-d-t-page-header;
+    }
+}
+
 h2 {
-  font-family: $avenir-next-bold;
-  font-weight: 600;
-  font-size: $font-size-mobile-section-header;
+    font-family: $avenir-next-bold;
+    font-weight: 700;
+    font-size: $font-size-mobile-section-header;
+    line-height: 2rem;
+    color: $primary-color-bandSite-Black;
+
+    @include tablet {
+        font-size: $font-size-desktop_tablet-section-header;
+        line-height:$line-height-d-t-section-header;
+    }
+
+    @include desktop {
+        font-size: $font-size-desktop_tablet-section-header;
+        line-height: $line-height-d-t-section-header;
+    }
 }
 
 h3 {
-  font-family: $avenir-next-demi;
-  font-weight: 600;
-  font-size: $font-size-mobile-subheader;
+    font-family: $avenir-next-demi;
+    font-weight: 600;
+    font-size: $font-size-mobile-subheader;
+ 
+    @include tablet {
+        font-size: $font-size-desktop_tablet-subheader;
+        line-height: $line-height-d-t-subheader;
+    }
+
+    @include desktop {
+        font-size: $font-size-desktop_tablet-subheader;
+        line-height: $line-height-d-t-subheader;
+    }
 }
 
 p {
-  font-family: $avenir-next-regular;
-  font-weight: 400;
-  font-size: $font-size-mobile-body-copy;
+    font-family: $avenir-next-regular;
+    font-weight: 400;
+    font-size: $font-size-mobile-body-copy;
+
+    @include tablet {
+        font-size: $font-size-desktop_tablet-body-copy;
+    }
+
+    @include desktop {
+        font-size: $font-size-desktop_tablet-body-copy;
+    }
 }
 
 header {
@@ -34,15 +80,33 @@ header {
     align-items: center;
     text-decoration: none;
   
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top:3rem;
+        gap:4rem;
+    }
+
     .header-logo {
         display: flex;
         justify-content: center;
-        padding-top:2rem;
-        padding-bottom:1rem; 
+        padding-top: 2rem;
+        padding-bottom:2rem;
+
+        @include tablet {
+            padding-left: 2.25rem;
+            padding-right: 2rem;
+            padding-bottom: 2rem;
+        }
 
         .header-logo__img {
             display: block;
-            width:8rem;
+            width:10rem;
+        
+            @include tablet {
+                width: 15rem;
+            }
         }
     }
 
@@ -51,6 +115,12 @@ header {
         justify-content: center;
         width: 100%;
         box-sizing: border-box;
+
+        @include tablet {
+            width: 100%;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
     
         .nav-bar__list {
             text-decoration: none;
@@ -62,10 +132,16 @@ header {
             padding: 0;
             margin: 0;
             align-items: center;
+
+            @include tablet {
+                width:auto;
+                gap:3rem;
+                align-items: flex-end;
+            }
             
             .nav-bar__item {
-                font-size: .625rem;
-                line-height: $line-height-m-labelsnbuttons;
+                font-size: $font-size-mobile-subheader;
+                line-height: $line-height-m-subheader;
                 font-family: $avenir-next-demi;
                 font-weight: 600;
                 color: $primary-color-White;
@@ -75,6 +151,13 @@ header {
                 justify-content: center;
                 align-items: center;
                 
+                @include tablet {
+                    font-size: $font-size-desktop_tablet-subheader;
+                    line-height: $line-height-d-t-subheader;
+                    padding-bottom: 2rem;
+                    padding-top:2rem;
+                }
+
                 &:hover,
                 &:active {
                     border-bottom: .3rem solid $primary-color-White;
@@ -91,7 +174,7 @@ header {
                     content: '';
                     position: absolute;
                     left: 0;
-                    bottom: -0.3rem;
+                    bottom: 0;
                     width: 50vw;
                     height: 10rem;
                     background-color: $primary-color-White;
@@ -118,24 +201,37 @@ header {
     .hero__title {
         color: $primary-color-White;
         padding-left: 1rem;
-        font-size:$font-size-mobile-page-header;
-        line-height: $line-height-m-page-header;
+    
+        @include tablet {
+            padding-left: 3rem;
+        }
+
     }
 }
 
 .section-about {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include tablet {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
 
     .section-about__title {
         color: $primary-color-bandSite-Black;
+        font-weight: 600;
         padding-top: 2rem;
         padding-bottom: 1rem;
-        line-height: $line-height-m-section-header;
+    
+        @include tablet {
+            padding-top: 3rem;
+            padding-bottom: 2.25rem;
+        }
     }
 
     .section-about__items {
@@ -143,9 +239,14 @@ header {
         flex-direction: column;
         justify-content: center;
 
+        @include tablet {
+            padding-left: 3rem;
+            padding-right: 3rem;
+            padding-bottom: 1rem;
+        }
+
         .section-about__image {
             max-width: 100%;
-            height: auto;
         }
 
         .block-quote {
@@ -160,13 +261,29 @@ header {
                 margin-bottom: 0;
                 font-weight: 600;
                 padding-bottom: 1rem;
-                line-height:$line-height-m-body-copy;
+                letter-spacing: 0.08rem;
+            
+            
+                @include tablet {
+                    font-size: 1.5rem;
+                    letter-spacing: 0.110rem;
+                }
             }
             
             .block-quote__name {
                 font-weight: 600;
                 line-height: $line-height-m-body-copy;
+            
+                @include tablet {
+                    font-size: 1.2rem;
+                    letter-spacing: 0;
+                }
             }
+        }
+
+        .block-biography__title {
+            padding-bottom: 1rem;
+            padding-top: 2rem;
         }
 
         .block-biography {
@@ -176,17 +293,27 @@ header {
             padding-top:1rem;
             padding-bottom: 1rem;
 
-            .block-biography__title {
-                padding-bottom: 1rem;
+            @include tablet {
+                flex-direction: row;
+                // justify-content: space-between;
+                gap:1.5rem;
             }
             
             .block-biography__firstparagragh {
                 line-height: $line-height-m-body-copy;
                 padding-bottom: 1rem;
+            
+                @include tablet {
+                    line-height: 1.25rem;
+                }
             }
             
             .block-biography__secondparagragh {
                 line-height: $line-height-m-body-copy;
+            
+                @include tablet {
+                    line-height: 1.25rem;
+                }
             }
         }
     }
@@ -197,10 +324,21 @@ header {
   padding: 2rem 1rem;
   background-color: $secondary-color-alabaster;
 
+    @include tablet {
+        padding-top: 3rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
     .section-gallery__title {
         text-align: left;
         line-height: $line-height-m-section-header;
         padding-bottom: 1rem;
+
+        @include tablet {
+            font-weight: 600;
+            padding-bottom: 2rem;
+        }
     }
 
     .section-gallery__images {
@@ -258,7 +396,7 @@ footer {
             padding-top:0.5rem;
 
             .section-contact__title{
-                line-height: $line-height-m-body-footer;
+                line-height: $line-height-m-footer-copy;
                 font-weight: 700;
                 padding-bottom: .5rem;
             }
@@ -269,7 +407,7 @@ footer {
                 flex-direction: column;
                 margin: 0;
                 padding: 0;
-                line-height: $line-height-m-body-footer;
+                line-height: $line-height-m-footer-copy;
 
                 p {
                     margin: 0;
