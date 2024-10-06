@@ -673,6 +673,11 @@ footer .footer-section__contact .section-contacts .section-contact .section-cont
     padding-top: 0;
   }
 }
+footer .footer-section__contact .section-contacts .section-contact .section-contact__email a {
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-text-decoration: none;
+}
 footer .footer-section__contact .section-contacts .section-contact .section-contact__email p {
   margin: 0;
 }

@@ -642,6 +642,12 @@ footer {
                         padding-top:0;
                     }
 
+                    a {
+                        color: $primary-color-White;
+                        text-decoration: none;
+                        -webkit-text-decoration:none;
+                    }
+
                     p {
                         margin: 0;
                     }
