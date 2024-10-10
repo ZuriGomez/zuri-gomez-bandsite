@@ -2,7 +2,6 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
-
 *,
 *::before,
 *::after {
@@ -25,6 +24,64 @@ h1 {
     font-weight: 700;
     font-size: $font-size-mobile-page-header;
     line-height: 2rem;
+
+    @include tablet {
+        font-size: $font-size-desktop_tablet-page-header;
+        line-height:$line-height-d-t-page-header;
+    }
+
+    @include desktop {
+        font-size: $font-size-desktop_tablet-page-header;
+        line-height: $line-height-d-t-page-header;
+    }
+}
+
+h2 {
+    font-family: $avenir-next;
+    font-weight: 700;
+    font-size: $font-size-mobile-section-header;
+    line-height: 2rem;
+    color: $primary-color-bandSite-Black;
+
+    @include tablet {
+        font-size: $font-size-desktop_tablet-section-header;
+        line-height:$line-height-d-t-section-header;
+    }
+
+    @include desktop {
+        font-size: $font-size-desktop_tablet-section-header;
+        line-height: $line-height-d-t-section-header;
+    }
+}
+
+h3 {
+    font-family: $avenir-next;
+    font-weight: 600;
+    font-size: $font-size-mobile-subheader;
+ 
+    @include tablet {
+        font-size: $font-size-desktop_tablet-subheader;
+        line-height: $line-height-d-t-subheader;
+    }
+
+    @include desktop {
+        font-size: $font-size-desktop_tablet-subheader;
+        line-height: $line-height-d-t-subheader;
+    }
+}
+
+p {
+    font-family: $avenir-next;
+    font-weight: 400;
+    // font-size: $font-size-mobile-body-copy;
+
+    // @include tablet {
+    //     font-size: $font-size-desktop_tablet-body-copy;
+    // }
+
+    // @include desktop {
+    //     font-size: $font-size-desktop_tablet-body-copy;
+    // }
 }
 
 .header {
