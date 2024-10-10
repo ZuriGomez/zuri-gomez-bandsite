@@ -1,10 +1,5 @@
 @use 'variables' as *;
 
-@mixin mobile {
-    @media screen and (max-width: $mobile-max-width) {
-        @content;
-    }
-}
 
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
@@ -15,5 +10,14 @@
 @mixin desktop {
   @media screen and (min-width: $desktop-breakpoint) {
     @content;
+  }
+}
+
+@mixin underline {
+  &::after {
+    border-bottom: 2px solid $primary-color-White;
+    content: "";
+    position: absolute;
+    inset: 0;
   }
 }

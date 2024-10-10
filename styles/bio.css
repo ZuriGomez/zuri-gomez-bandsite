@@ -13,6 +13,112 @@
   src: url("../../assets/Font/AvenirNextLTPro-Bold.otf");
   font-weight: 700;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+.header {
+  background-color: #323232;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    height: 5.5rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 2.25rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 0 5rem;
+  }
+}
+.header__link {
+  align-self: center;
+}
+@media screen and (min-width: 768px) {
+  .header__link {
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__nav {
+    display: flex;
+    margin-left: 6.5rem;
+  }
+}
+.header__nav--list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+@media screen and (min-width: 768px) {
+  .header__nav--list {
+    gap: 4rem;
+  }
+}
+.header__nav--list-item {
+  flex: 1;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .header__nav--list-item {
+    display: flex;
+  }
+}
+.header__nav--link {
+  color: #fafafa;
+  text-decoration: none;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+.header__nav--link:hover::after, .header__nav--link:focus::after {
+  border-bottom: 2px solid #ffffff;
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+@media screen and (min-width: 768px) {
+  .header__nav--link {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
+  }
+}
+.header__nav--link-active {
+  color: #ffffff;
+  font-weight: 700;
+}
+.header__nav--link-active::after {
+  border-bottom: 2px solid #ffffff;
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -83,142 +189,6 @@ h3 {
 p {
   font-family: "Avenir-Next";
   font-weight: 400;
-}
-
-.header {
-  background-color: #323232;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-}
-@media screen and (min-width: 768px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .header {
-    gap: 1.5rem;
-  }
-}
-.header__logo {
-  display: flex;
-  justify-content: center;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-}
-@media screen and (min-width: 768px) {
-  .header__logo {
-    padding-left: 3rem;
-    padding-right: 2rem;
-    padding-bottom: 1rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .header__logo {
-    padding-left: 4rem;
-  }
-}
-.header__logo--img {
-  display: block;
-  width: 15rem;
-}
-@media screen and (min-width: 768px) {
-  .header__logo--img {
-    width: 10rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .header__logo--img {
-    width: 6rem;
-  }
-}
-.header__nav {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-}
-@media screen and (min-width: 768px) {
-  .header__nav {
-    width: 100%;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-}
-.header__nav--list {
-  text-decoration: none;
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  align-items: center;
-}
-@media screen and (min-width: 768px) {
-  .header__nav--list {
-    width: auto;
-    gap: 4rem;
-    align-items: flex-end;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .header__nav--list {
-    gap: 2rem;
-  }
-}
-.header__nav--list-item {
-  font-size: 1.5rem;
-  line-height: 1.375rem;
-  font-family: "Avenir-Next";
-  font-weight: 400;
-  color: #ffffff;
-  padding-bottom: 1rem;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (min-width: 768px) {
-  .header__nav--list-item {
-    font-size: 1.25rem;
-    line-height: 2rem;
-    padding-bottom: 1.5rem;
-    padding-top: 1.5rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .header__nav--list-item {
-    font-size: 0.8rem;
-    padding-top: 1rem;
-  }
-}
-.header__nav--list-item:hover, .header__nav--list-item:active {
-  border-bottom: 0.3rem solid #ffffff;
-  font-weight: 600;
-}
-.header__nav--list-item.active {
-  border-bottom: 0.3rem solid #ffffff;
-  font-weight: 600;
-}
-.header__nav--list-item.biography::after, .header__nav--list-item.shows::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 50vw;
-  height: 10rem;
-  background-color: #ffffff;
-}
-.header__nav--list-item a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .hero {
