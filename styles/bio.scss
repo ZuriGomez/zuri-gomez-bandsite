@@ -3,13 +3,17 @@
 @use "./partials/variables" as *;
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+    font-family:$avenir-next;
+    margin:0;
+    padding:0;
+}
+
 h1 {
-    font-family: $avenir-next-bold;
+    font-family: $avenir-next;
     font-weight: 700;
     font-size: $font-size-mobile-page-header;
     line-height: 2rem;
@@ -26,7 +30,7 @@ h1 {
 }
 
 h2 {
-    font-family: $avenir-next-bold;
+    font-family: $avenir-next;
     font-weight: 700;
     font-size: $font-size-mobile-section-header;
     line-height: 2rem;
@@ -44,7 +48,7 @@ h2 {
 }
 
 h3 {
-    font-family: $avenir-next-demi;
+    font-family: $avenir-next;
     font-weight: 600;
     font-size: $font-size-mobile-subheader;
  
@@ -60,7 +64,7 @@ h3 {
 }
 
 p {
-    font-family: $avenir-next-regular;
+    font-family: $avenir-next;
     font-weight: 400;
     // font-size: $font-size-mobile-body-copy;
 
@@ -73,7 +77,7 @@ p {
     // }
 }
 
-header {
+.header {
     background-color: $primary-color-bandSite-Black;
     display: flex;
     flex-direction: column;
@@ -91,7 +95,7 @@ header {
         gap:1.5rem;
     }
 
-    .header-logo {
+    &__logo {
         display: flex;
         justify-content: center;
         padding-top: 1rem;
@@ -107,9 +111,9 @@ header {
             padding-left: 4rem;
         }
 
-        .header-logo__img {
+        &--img {
             display: block;
-            width:12rem;
+            width: 15rem;
         
             @include tablet {
                 width: 10rem;
@@ -121,7 +125,7 @@ header {
         }
     }
 
-    .nav-bar {
+    &__nav {
         display: flex;
         justify-content: center;
         width: 100%;
@@ -133,7 +137,7 @@ header {
             align-items: flex-end;
         }
     
-        .nav-bar__list {
+        &--list {
             text-decoration: none;
             list-style: none;
             display: flex;
@@ -154,10 +158,10 @@ header {
                 gap:2rem;
             }
             
-            .nav-bar__item {
+            &-item {
                 font-size: $font-size-mobile-subheader;
                 line-height: $line-height-m-subheader;
-                font-family: $avenir-next-demi;
+                font-family: $avenir-next;
                 font-weight: 400;
                 color: $primary-color-White;
                 padding-bottom: 1rem;
@@ -218,7 +222,7 @@ header {
   max-width: 100%;
   height: 30rem;
 
-    .hero__title {
+    &__title {
         color: $primary-color-White;
         padding-left: 1rem;
         font-size: 2.5rem;
@@ -237,7 +241,7 @@ header {
     }
 }
 
-.section-about {
+.about {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
@@ -256,7 +260,7 @@ header {
         padding-right: 8rem;
     }
 
-    .section-about__title {
+    &__title {
         color: $primary-color-bandSite-Black;
         font-weight: 600;
         font-size:2.5rem;
@@ -274,7 +278,7 @@ header {
         }
     }
 
-    .section-about__items {
+    &__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -290,7 +294,7 @@ header {
             padding-right: 7rem;
         }
 
-        .section-about__image {
+        &--image {
             width: auto;
         
             @include desktop {
@@ -299,7 +303,7 @@ header {
             }
         }
 
-        .block-quote {
+        &--quote {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -307,7 +311,7 @@ header {
             padding-bottom: 1rem;
             color: $primary-color-bandSite-Black;
         
-            .block-quote__paragraph {
+            &-text {
                 margin-bottom: 0;
                 font-weight: 600;
                 padding-bottom: 1rem;
@@ -328,7 +332,7 @@ header {
                 }
             }
             
-            .block-quote__name {
+            &-author {
                 font-weight: 600;
                 line-height: $line-height-m-body-copy;
                 letter-spacing: 0.5;
@@ -348,7 +352,7 @@ header {
             }
         }
 
-        .block-biography__title {
+        &--subtitle {
             padding-bottom: 1rem;
             padding-top: 2rem;
             font-weight: 400;
@@ -364,7 +368,7 @@ header {
             }
         }
 
-        .block-biography {
+        &--biography {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -380,7 +384,7 @@ header {
                 gap: 2rem;
             }
 
-            .block-biography__firstparagragh {
+            &-text {
                 line-height: $line-height-m-body-copy;
                 padding-bottom: 2rem;
                 line-height: 2rem;
@@ -396,25 +400,12 @@ header {
                 }
             }
             
-            .block-biography__secondparagragh {
-                line-height: 2rem;
-                font-size: 1.3rem;
-            
-                @include tablet {
-                    line-height: 1.5rem;
-                    font-size: 1.05rem;
-                }
-
-                @include desktop {
-                    font-size:.875rem;
-                }
-            }
         }
     }
 }
 
 
-.section-gallery {
+.gallery {
   padding: 2rem 1rem;
   background-color: $secondary-color-alabaster;
 
@@ -431,7 +422,7 @@ header {
         padding-right: 8rem;
     }
 
-    .section-gallery__title {
+    &__title {
         text-align: left;
         line-height: $line-height-m-section-header;
         padding-bottom: 2rem;
@@ -451,7 +442,7 @@ header {
         }
     }
 
-    .section-gallery__images {
+    &__images {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -470,7 +461,7 @@ header {
             gap:1rem;
         }
     
-        .section-gallery__image {
+        &--image {
             padding: 0;
             filter: grayscale(100%);
             transition: filter 0.1s ease;
@@ -510,11 +501,11 @@ footer {
         padding-top:3rem;
     }
     
-    .footer-section__contact {
+    .footer {
         display: flex;
         flex-direction: column;
     
-        .section-social {
+        &__social {
             display: flex;
             flex-direction: column;
             justify-content: left;
@@ -526,7 +517,7 @@ footer {
                 padding-bottom: 2rem;
             }
 
-            .section-social__title {
+            &--title {
                 font-size:2.5rem;
                 line-height: $line-height-m-section-header;
                 padding-bottom: 1.5rem;
@@ -542,7 +533,7 @@ footer {
                     font-size: 2.5rem;                }
             }
 
-            .section-social__icons {
+            &--icons {
                 display: flex;
                 justify-content: left;
                 gap: 3rem;
@@ -551,7 +542,7 @@ footer {
                     gap:2rem;
                 }
 
-                .section-social__icon {
+                &-icon {
                     height: 2rem;
                 
                     @include desktop {
@@ -561,7 +552,7 @@ footer {
             }
         }
 
-        .section-contacts {
+        &__contacts {
             display: flex;
             flex-direction: column;
             gap: 1rem;
@@ -579,13 +570,13 @@ footer {
                 justify-content: flex-start;
             }
 
-            .section-contact {
+            &--item {
                 display: flex;
                 flex-direction: column;
                 padding-top:0.5rem;
                 padding-bottom: 2rem;
 
-                .section-contact__title{
+                &-title {
                     line-height: 2rem;
                     font-weight: 600;
                     padding-bottom: 1rem;
@@ -601,8 +592,8 @@ footer {
                     }
                 }
 
-                .section-contact__address,
-                .section-contact__booking {
+                &-address,
+                &-booking {
                     display: flex;
                     flex-direction: column;
                     margin: 0;
@@ -627,7 +618,7 @@ footer {
                     }
                 }
 
-                .section-contact__email {
+                .footer__contact--item-email {
                     margin-top: 1rem;
                     padding-bottom: 2rem;
                     
@@ -657,7 +648,7 @@ footer {
 
     }
 
-    .footer__logo {
+    &__logo {
         width: 15rem;
         margin: 0;
         position:absolute;
@@ -686,7 +677,7 @@ footer {
 
     }
     
-    .copyright__message {
+    &__copyright-message {
         padding-top: 5rem;
         padding-bottom: 2rem;
         line-height: 2rem;

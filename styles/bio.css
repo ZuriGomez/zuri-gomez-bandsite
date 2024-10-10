@@ -14,9 +14,13 @@
   font-weight: 700;
 }
 * {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Avenir-Next";
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 h1 {
@@ -81,7 +85,7 @@ p {
   font-weight: 400;
 }
 
-header {
+.header {
   background-color: #323232;
   display: flex;
   flex-direction: column;
@@ -89,7 +93,7 @@ header {
   text-decoration: none;
 }
 @media screen and (min-width: 768px) {
-  header {
+  .header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -97,56 +101,56 @@ header {
   }
 }
 @media screen and (min-width: 1024px) {
-  header {
+  .header {
     gap: 1.5rem;
   }
 }
-header .header-logo {
+.header__logo {
   display: flex;
   justify-content: center;
   padding-top: 1rem;
   padding-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
-  header .header-logo {
+  .header__logo {
     padding-left: 3rem;
     padding-right: 2rem;
     padding-bottom: 1rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  header .header-logo {
+  .header__logo {
     padding-left: 4rem;
   }
 }
-header .header-logo .header-logo__img {
+.header__logo--img {
   display: block;
-  width: 12rem;
+  width: 15rem;
 }
 @media screen and (min-width: 768px) {
-  header .header-logo .header-logo__img {
+  .header__logo--img {
     width: 10rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  header .header-logo .header-logo__img {
+  .header__logo--img {
     width: 6rem;
   }
 }
-header .nav-bar {
+.header__nav {
   display: flex;
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
 }
 @media screen and (min-width: 768px) {
-  header .nav-bar {
+  .header__nav {
     width: 100%;
     justify-content: flex-start;
     align-items: flex-end;
   }
 }
-header .nav-bar .nav-bar__list {
+.header__nav--list {
   text-decoration: none;
   list-style: none;
   display: flex;
@@ -158,18 +162,18 @@ header .nav-bar .nav-bar__list {
   align-items: center;
 }
 @media screen and (min-width: 768px) {
-  header .nav-bar .nav-bar__list {
+  .header__nav--list {
     width: auto;
     gap: 4rem;
     align-items: flex-end;
   }
 }
 @media screen and (min-width: 1024px) {
-  header .nav-bar .nav-bar__list {
+  .header__nav--list {
     gap: 2rem;
   }
 }
-header .nav-bar .nav-bar__list .nav-bar__item {
+.header__nav--list-item {
   font-size: 1.5rem;
   line-height: 1.375rem;
   font-family: "Avenir-Next";
@@ -182,7 +186,7 @@ header .nav-bar .nav-bar__list .nav-bar__item {
   align-items: center;
 }
 @media screen and (min-width: 768px) {
-  header .nav-bar .nav-bar__list .nav-bar__item {
+  .header__nav--list-item {
     font-size: 1.25rem;
     line-height: 2rem;
     padding-bottom: 1.5rem;
@@ -190,20 +194,20 @@ header .nav-bar .nav-bar__list .nav-bar__item {
   }
 }
 @media screen and (min-width: 1024px) {
-  header .nav-bar .nav-bar__list .nav-bar__item {
+  .header__nav--list-item {
     font-size: 0.8rem;
     padding-top: 1rem;
   }
 }
-header .nav-bar .nav-bar__list .nav-bar__item:hover, header .nav-bar .nav-bar__list .nav-bar__item:active {
+.header__nav--list-item:hover, .header__nav--list-item:active {
   border-bottom: 0.3rem solid #ffffff;
   font-weight: 600;
 }
-header .nav-bar .nav-bar__list .nav-bar__item.active {
+.header__nav--list-item.active {
   border-bottom: 0.3rem solid #ffffff;
   font-weight: 600;
 }
-header .nav-bar .nav-bar__list .nav-bar__item.biography::after, header .nav-bar .nav-bar__list .nav-bar__item.shows::after {
+.header__nav--list-item.biography::after, .header__nav--list-item.shows::after {
   content: "";
   position: absolute;
   left: 0;
@@ -212,7 +216,7 @@ header .nav-bar .nav-bar__list .nav-bar__item.biography::after, header .nav-bar 
   height: 10rem;
   background-color: #ffffff;
 }
-header .nav-bar .nav-bar__list .nav-bar__item a {
+.header__nav--list-item a {
   text-decoration: none;
   color: inherit;
 }
@@ -226,27 +230,27 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   max-width: 100%;
   height: 30rem;
 }
-.hero .hero__title {
+.hero__title {
   color: #ffffff;
   padding-left: 1rem;
   font-size: 2.5rem;
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
-  .hero .hero__title {
+  .hero__title {
     padding-left: 3rem;
     font-size: 4rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .hero .hero__title {
+  .hero__title {
     padding-left: 4rem;
     font-weight: 600;
     font-size: 3.8rem;
   }
 }
 
-.section-about {
+.about {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
@@ -256,18 +260,18 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   justify-content: center;
 }
 @media screen and (min-width: 768px) {
-  .section-about {
+  .about {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-about {
+  .about {
     padding-left: 8rem;
     padding-right: 8rem;
   }
 }
-.section-about .section-about__title {
+.about__title {
   color: #323232;
   font-weight: 600;
   font-size: 2.5rem;
@@ -275,45 +279,45 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   padding-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .section-about .section-about__title {
+  .about__title {
     padding-top: 3rem;
     padding-bottom: 2.25rem;
     font-size: 2.75rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-about .section-about__title {
+  .about__title {
     font-size: 2.5rem;
   }
 }
-.section-about .section-about__items {
+.about__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 @media screen and (min-width: 768px) {
-  .section-about .section-about__items {
+  .about__content {
     padding-left: 3rem;
     padding-right: 3rem;
     padding-bottom: 1rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-about .section-about__items {
+  .about__content {
     padding-left: 7rem;
     padding-right: 7rem;
   }
 }
-.section-about .section-about__items .section-about__image {
+.about__content--image {
   width: auto;
 }
 @media screen and (min-width: 1024px) {
-  .section-about .section-about__items .section-about__image {
+  .about__content--image {
     margin-left: 1rem;
     margin-right: 1rem;
   }
 }
-.section-about .section-about__items .block-quote {
+.about__content--quote {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -321,7 +325,7 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   padding-bottom: 1rem;
   color: #323232;
 }
-.section-about .section-about__items .block-quote .block-quote__paragraph {
+.about__content--quote-text {
   margin-bottom: 0;
   font-weight: 600;
   padding-bottom: 1rem;
@@ -330,20 +334,20 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   line-height: 2.5rem;
 }
 @media screen and (min-width: 768px) {
-  .section-about .section-about__items .block-quote .block-quote__paragraph {
+  .about__content--quote-text {
     font-size: 1.6rem;
     line-height: 2.1rem;
     letter-spacing: 0.05rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-about .section-about__items .block-quote .block-quote__paragraph {
+  .about__content--quote-text {
     font-size: 1.2rem;
     letter-spacing: 0;
     padding-top: 1rem;
   }
 }
-.section-about .section-about__items .block-quote .block-quote__name {
+.about__content--quote-author {
   font-weight: 600;
   line-height: 1.125rem;
   letter-spacing: 0.5;
@@ -351,36 +355,36 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   line-height: 2.5rem;
 }
 @media screen and (min-width: 768px) {
-  .section-about .section-about__items .block-quote .block-quote__name {
+  .about__content--quote-author {
     font-size: 1.2rem;
     letter-spacing: 0;
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-about .section-about__items .block-quote .block-quote__name {
+  .about__content--quote-author {
     font-size: 1rem;
     padding-top: 0.5rem;
     font-weight: 600;
   }
 }
-.section-about .section-about__items .block-biography__title {
+.about__content--subtitle {
   padding-bottom: 1rem;
   padding-top: 2rem;
   font-weight: 400;
 }
 @media screen and (min-width: 768px) {
-  .section-about .section-about__items .block-biography__title {
+  .about__content--subtitle {
     font-weight: 600;
     font-size: 1.8rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-about .section-about__items .block-biography__title {
+  .about__content--subtitle {
     font-weight: 400;
     font-size: 1.5rem;
   }
 }
-.section-about .section-about__items .block-biography {
+.about__content--biography {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -388,55 +392,40 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   padding-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .section-about .section-about__items .block-biography {
+  .about__content--biography {
     flex-direction: row;
     gap: 1.5rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-about .section-about__items .block-biography {
+  .about__content--biography {
     gap: 2rem;
   }
 }
-.section-about .section-about__items .block-biography .block-biography__firstparagragh {
+.about__content--biography-text {
   line-height: 1.125rem;
   padding-bottom: 2rem;
   line-height: 2rem;
   font-size: 1.3rem;
 }
 @media screen and (min-width: 768px) {
-  .section-about .section-about__items .block-biography .block-biography__firstparagragh {
+  .about__content--biography-text {
     line-height: 1.5rem;
     font-size: 1.05rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-about .section-about__items .block-biography .block-biography__firstparagragh {
-    font-size: 0.875rem;
-  }
-}
-.section-about .section-about__items .block-biography .block-biography__secondparagragh {
-  line-height: 2rem;
-  font-size: 1.3rem;
-}
-@media screen and (min-width: 768px) {
-  .section-about .section-about__items .block-biography .block-biography__secondparagragh {
-    line-height: 1.5rem;
-    font-size: 1.05rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .section-about .section-about__items .block-biography .block-biography__secondparagragh {
+  .about__content--biography-text {
     font-size: 0.875rem;
   }
 }
 
-.section-gallery {
+.gallery {
   padding: 2rem 1rem;
   background-color: #fafafa;
 }
 @media screen and (min-width: 768px) {
-  .section-gallery {
+  .gallery {
     padding-top: 3rem;
     padding-left: 3rem;
     padding-right: 3rem;
@@ -444,13 +433,13 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-gallery {
+  .gallery {
     padding-top: 2.5rem;
     padding-left: 8rem;
     padding-right: 8rem;
   }
 }
-.section-gallery .section-gallery__title {
+.gallery__title {
   text-align: left;
   line-height: 2rem;
   padding-bottom: 2rem;
@@ -459,18 +448,18 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   padding-top: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .section-gallery .section-gallery__title {
+  .gallery__title {
     font-weight: 600;
     padding-bottom: 2rem;
     font-size: 2.75rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-gallery .section-gallery__title {
+  .gallery__title {
     font-size: 2.5rem;
   }
 }
-.section-gallery .section-gallery__images {
+.gallery__images {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -478,7 +467,7 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   margin: 0;
 }
 @media screen and (min-width: 768px) {
-  .section-gallery .section-gallery__images {
+  .gallery__images {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -487,20 +476,20 @@ header .nav-bar .nav-bar__list .nav-bar__item a {
   }
 }
 @media screen and (min-width: 1024px) {
-  .section-gallery .section-gallery__images {
+  .gallery__images {
     gap: 1rem;
   }
 }
-.section-gallery .section-gallery__images .section-gallery__image {
+.gallery__images--image {
   padding: 0;
   filter: grayscale(100%);
   transition: filter 0.1s ease;
 }
-.section-gallery .section-gallery__images .section-gallery__image:hover {
+.gallery__images--image:hover {
   filter: grayscale(0%);
 }
 @media screen and (min-width: 768px) {
-  .section-gallery .section-gallery__images .section-gallery__image {
+  .gallery__images--image {
     width: 30%;
   }
 }
@@ -531,24 +520,24 @@ footer {
     padding-top: 3rem;
   }
 }
-footer .footer-section__contact {
+footer .footer {
   display: flex;
   flex-direction: column;
 }
-footer .footer-section__contact .section-social {
+footer .footer__social {
   display: flex;
   flex-direction: column;
   justify-content: left;
   gap: 1rem;
 }
 @media screen and (min-width: 768px) {
-  footer .footer-section__contact .section-social {
+  footer .footer__social {
     flex-direction: row;
     gap: 3rem;
     padding-bottom: 2rem;
   }
 }
-footer .footer-section__contact .section-social .section-social__title {
+footer .footer__social--title {
   font-size: 2.5rem;
   line-height: 2rem;
   padding-bottom: 1.5rem;
@@ -556,35 +545,35 @@ footer .footer-section__contact .section-social .section-social__title {
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
-  footer .footer-section__contact .section-social .section-social__title {
+  footer .footer__social--title {
     font-size: 2.75rem;
     padding-bottom: 0;
   }
 }
 @media screen and (min-width: 1024px) {
-  footer .footer-section__contact .section-social .section-social__title {
+  footer .footer__social--title {
     font-size: 2.5rem;
   }
 }
-footer .footer-section__contact .section-social .section-social__icons {
+footer .footer__social--icons {
   display: flex;
   justify-content: left;
   gap: 3rem;
 }
 @media screen and (min-width: 1024px) {
-  footer .footer-section__contact .section-social .section-social__icons {
+  footer .footer__social--icons {
     gap: 2rem;
   }
 }
-footer .footer-section__contact .section-social .section-social__icons .section-social__icon {
+footer .footer__social--icons-icon {
   height: 2rem;
 }
 @media screen and (min-width: 1024px) {
-  footer .footer-section__contact .section-social .section-social__icons .section-social__icon {
+  footer .footer__social--icons-icon {
     height: 1.5rem;
   }
 }
-footer .footer-section__contact .section-contacts {
+footer .footer__contacts {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -592,43 +581,42 @@ footer .footer-section__contact .section-contacts {
   font-size: 1.5rem;
 }
 @media screen and (min-width: 768px) {
-  footer .footer-section__contact .section-contacts {
+  footer .footer__contacts {
     padding: 0;
     flex-direction: row;
     justify-content: space-between;
   }
 }
 @media screen and (min-width: 1024px) {
-  footer .footer-section__contact .section-contacts {
+  footer .footer__contacts {
     gap: 4rem;
     justify-content: flex-start;
   }
 }
-footer .footer-section__contact .section-contacts .section-contact {
+footer .footer__contacts--item {
   display: flex;
   flex-direction: column;
   padding-top: 0.5rem;
   padding-bottom: 2rem;
 }
-footer .footer-section__contact .section-contacts .section-contact .section-contact__title {
+footer .footer__contacts--item-title {
   line-height: 2rem;
   font-weight: 600;
   padding-bottom: 1rem;
   font-size: 1.5rem;
 }
 @media screen and (min-width: 768px) {
-  footer .footer-section__contact .section-contacts .section-contact .section-contact__title {
+  footer .footer__contacts--item-title {
     font-size: 1rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  footer .footer-section__contact .section-contacts .section-contact .section-contact__title {
+  footer .footer__contacts--item-title {
     font-size: 0.875rem;
     font-weight: 600;
   }
 }
-footer .footer-section__contact .section-contacts .section-contact .section-contact__address,
-footer .footer-section__contact .section-contacts .section-contact .section-contact__booking {
+footer .footer__contacts--item-address, footer .footer__contacts--item-booking {
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -638,50 +626,47 @@ footer .footer-section__contact .section-contacts .section-contact .section-cont
   font-size: 1.5rem;
 }
 @media screen and (min-width: 768px) {
-  footer .footer-section__contact .section-contacts .section-contact .section-contact__address,
-  footer .footer-section__contact .section-contacts .section-contact .section-contact__booking {
+  footer .footer__contacts--item-address, footer .footer__contacts--item-booking {
     font-size: 1rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  footer .footer-section__contact .section-contacts .section-contact .section-contact__address,
-  footer .footer-section__contact .section-contacts .section-contact .section-contact__booking {
+  footer .footer__contacts--item-address, footer .footer__contacts--item-booking {
     font-size: 0.875rem;
     font-weight: 400;
     padding-top: 0;
     line-height: 1.5rem;
   }
 }
-footer .footer-section__contact .section-contacts .section-contact .section-contact__address p,
-footer .footer-section__contact .section-contacts .section-contact .section-contact__booking p {
+footer .footer__contacts--item-address p, footer .footer__contacts--item-booking p {
   margin: 0;
 }
-footer .footer-section__contact .section-contacts .section-contact .section-contact__email {
+footer .footer__contacts--item .footer__contact--item-email {
   margin-top: 1rem;
   padding-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
-  footer .footer-section__contact .section-contacts .section-contact .section-contact__email {
+  footer .footer__contacts--item .footer__contact--item-email {
     font-size: 1rem;
     padding-bottom: 1rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  footer .footer-section__contact .section-contacts .section-contact .section-contact__email {
+  footer .footer__contacts--item .footer__contact--item-email {
     font-size: 0.875rem;
     font-weight: 400;
     padding-top: 0;
   }
 }
-footer .footer-section__contact .section-contacts .section-contact .section-contact__email a {
+footer .footer__contacts--item .footer__contact--item-email a {
   color: #ffffff;
   text-decoration: none;
   -webkit-text-decoration: none;
 }
-footer .footer-section__contact .section-contacts .section-contact .section-contact__email p {
+footer .footer__contacts--item .footer__contact--item-email p {
   margin: 0;
 }
-footer .footer__logo {
+footer__logo {
   width: 15rem;
   margin: 0;
   position: absolute;
@@ -690,7 +675,7 @@ footer .footer__logo {
   z-index: 2;
 }
 @media screen and (min-width: 768px) {
-  footer .footer__logo {
+  footer__logo {
     position: absolute;
     left: 48rem;
     bottom: 23rem;
@@ -701,7 +686,7 @@ footer .footer__logo {
   }
 }
 @media screen and (min-width: 1024px) {
-  footer .footer__logo {
+  footer__logo {
     position: absolute;
     left: 60rem;
     bottom: 20rem;
@@ -710,21 +695,21 @@ footer .footer__logo {
     margin: 0;
   }
 }
-footer .copyright__message {
+footer__copyright-message {
   padding-top: 5rem;
   padding-bottom: 2rem;
   line-height: 2rem;
   font-size: 1.2rem;
 }
 @media screen and (min-width: 768px) {
-  footer .copyright__message {
+  footer__copyright-message {
     padding-bottom: 3rem;
     padding-top: 1rem;
     font-size: 1rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  footer .copyright__message {
+  footer__copyright-message {
     font-size: 0.875rem;
     font-weight: 400;
     padding-top: 0.5rem;
