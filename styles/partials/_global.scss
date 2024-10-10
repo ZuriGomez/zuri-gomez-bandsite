@@ -1,6 +1,7 @@
-@use "./typography";
+@use "./typography" as *;
 @use "./mixins" as *;
 @use "./variables" as *;
+
 
 *,
 *::before,
@@ -8,9 +9,9 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
-  font-family:$avenir-next;
+  font-family: $avenir-next;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 
@@ -20,7 +21,11 @@ body {
   }
 }
 
-// header!
+h1 {
+    font-weight: 700;
+    font-size: $font-size-mobile-page-header;
+    line-height: 2rem;
+}
 
 .header {
   background-color: $primary-color-bandSite-Black;
@@ -90,20 +95,20 @@ body {
 
         &:hover,
         &:focus {
-        @include underline;
-        }
+            @include underline;
+            }
 
         @include tablet {
-        display: flex;
-        align-items: center;
-        padding-bottom: 0;
-        }
+            display: flex;
+            align-items: center;
+            padding-bottom: 0;
+            }
 
         &-active {
-        @include underline;
-        color: $primary-color-White;
-        font-weight: 700;
-        }
+            @include underline;
+            color: $primary-color-White;
+            font-weight: 700;
+            }
 
     }
 
