@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/bio.css">
+    <script src="./scripts/index-page.js" defer></script>
     <title>Bandsite</title>
 </head>
 <body>
@@ -47,6 +48,33 @@
                 <img class="gallery__images--image" src="./assets/Images/Photo-gallery-8.jpg" alt="Photo-gallery-8">
                 <img class="gallery__images--image" src="./assets/Images/Photo-gallery-9.jpg" alt="Photo-gallery-9">
             </div>
+        </section>
+        <section class="comments">
+            <h2 class="comments__title">Join the Conversation</h2>
+            <!-- FORM  -->
+            <form class="comments-form">
+                <label for="name" class="comments-form__label">NAME:</label>
+                <textarea 
+                required 
+                placeholder="Enter your name" 
+                name="name" 
+                id="name" 
+                class="comments-form__textarea"
+                autocomplete="off"
+                ></textarea>
+                <label for="comment" class="comments-form__label">COMMENT:</label>
+                <textarea 
+                required 
+                placeholder="Add a new comment" 
+                name="comment" 
+                id="comment" 
+                class="comments-form__textarea"
+                autocomplete="off"
+                ></textarea>
+                <button class="comments-form__button">SUBMIT</button>
+            </form>
+            <!-- Comments  -->
+            <div id="comments-list"></div>
         </section>
     </main>
     <footer>

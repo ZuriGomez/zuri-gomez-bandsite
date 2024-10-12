@@ -268,6 +268,60 @@
     }
 }
 
+.comments {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
+    flex-direction: column;
+
+    &__title {
+        padding-bottom: 1rem;
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap:1.5rem;
+        border-bottom: 3px solid $secondary-color-Mercury;
+
+        &__label{
+            font-size: 2rem;
+            color: $primary-color-Silver;
+            font-family: $avenir-next;
+            font-weight: 600;
+            padding-top: 1rem;
+            line-height: 0.2rem;
+        }
+
+        &__textarea {
+            border: .1rem solid $primary-color-Silver;
+            border-radius: 5px;
+        }
+
+        &__button {
+            box-sizing: border-box;
+            background-color:$primary-color-bandSite-Black;
+            color: $primary-color-White;
+            padding: 2rem 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+    }
+
+    &-list {
+        display: flex;
+        justify-content: flex-start;
+
+    }
+
+}
+
+
 footer {
     background-color: $primary-color-bandSite-Black;
     color: $primary-color-White;

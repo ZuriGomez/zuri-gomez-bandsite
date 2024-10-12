@@ -86,10 +86,11 @@ p {
 
 .header {
   background-color: $primary-color-bandSite-Black;
-  height: 4rem;
+  height: 7rem;
   display: flex;
   flex-direction: column;
-  padding-top: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
   justify-content: space-between;
 
     @include tablet {
@@ -109,6 +110,10 @@ p {
         @include tablet {
         // this makes sure the logo is centered
         display: flex;
+        }
+
+        &--logo {
+            height: 2rem;
         }
     }
 
@@ -145,10 +150,12 @@ p {
     &__nav--link {
         color: $secondary-color-alabaster;
         text-decoration: none;
-        padding-bottom: 0.5rem;
+        padding-bottom: 1.5rem;
         display: inline-block;
         width: 100%;
         position: relative;
+        font-size: 1.5rem;
+        font-weight: 400;
 
         &:hover,
         &:focus {
@@ -164,7 +171,7 @@ p {
         &-active {
             @include underline;
             color: $primary-color-White;
-            font-weight: 700;
+            font-weight: 600;
             }
 
     }

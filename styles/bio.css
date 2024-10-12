@@ -95,10 +95,11 @@ p {
 
 .header {
   background-color: #323232;
-  height: 4rem;
+  height: 7rem;
   display: flex;
   flex-direction: column;
-  padding-top: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
   justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
@@ -121,6 +122,9 @@ p {
   .header__link {
     display: flex;
   }
+}
+.header__link--logo {
+  height: 2rem;
 }
 @media screen and (min-width: 768px) {
   .header__nav {
@@ -151,10 +155,12 @@ p {
 .header__nav--link {
   color: #fafafa;
   text-decoration: none;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1.5rem;
   display: inline-block;
   width: 100%;
   position: relative;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 .header__nav--link:hover::after, .header__nav--link:focus::after {
   border-bottom: 2px solid #ffffff;
@@ -171,7 +177,7 @@ p {
 }
 .header__nav--link-active {
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 600;
 }
 .header__nav--link-active::after {
   border-bottom: 2px solid #ffffff;
@@ -451,6 +457,51 @@ p {
   .gallery__images--image {
     width: 30%;
   }
+}
+
+.comments {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  flex-direction: column;
+}
+.comments__title {
+  padding-bottom: 1rem;
+}
+.comments-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  border-bottom: 3px solid #E1E1E1;
+}
+.comments-form__label {
+  font-size: 2rem;
+  color: #AFAFAF;
+  font-family: "Avenir-Next";
+  font-weight: 600;
+  padding-top: 1rem;
+  line-height: 0.2rem;
+}
+.comments-form__textarea {
+  border: 0.1rem solid #AFAFAF;
+  border-radius: 5px;
+}
+.comments-form__button {
+  box-sizing: border-box;
+  background-color: #323232;
+  color: #ffffff;
+  padding: 2rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.comments-list {
+  display: flex;
+  justify-content: flex-start;
 }
 
 footer {
