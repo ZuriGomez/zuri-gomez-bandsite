@@ -1,15 +1,18 @@
 const comments = [
     {
+        avatar:"img1",
         name:"Victor Pinto",
         date: "11/02/2023",
         comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
     },
     {
+        avatar:"img2",
         name:"Christina Cabrera",
         date: "10/28/2023",
         comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
     },
     {
+        avatar:"img3",
         name:"Isaac Tadesse",
         date: "10/20/2023",
         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
@@ -24,42 +27,38 @@ function createcommentCard(comment) {
     const cardContainer = document.createElement('div');
     cardContainer.classList.add("comments-list__item")
     
+        const avatar = document.createElement('img');
+        avatar.classList.add('comments-list__item-avatar'); 
+        avatar.innerHTML = comment.avatar;    
 
         const cardContainer2 = document.createElement('div');
-        cardContainer2.classList.add("comments-list__item-top")
+        cardContainer2.classList.add("comments-list__item-combox")
 
             const topContainer = document.createElement('div');
-            topContainer.classList.add("comments-list__item-top")
+            topContainer.classList.add("comments-list__item-combox__top")
                 
                 const nameValue = document.createElement('p');
-                nameValue.classList.add('comments-list__item-top--name');
+                nameValue.classList.add('comments-list__item-combox__top-name');
                 nameValue.innerHTML = comment.name;
 
                 const dateValue = document.createElement('p');
-                dateValue.classList.add('comments-list__item-top--date');  
+                dateValue.classList.add('comments-list__item-combox__top-date');  
                 dateValue.innerHTML = comment.date;
 
             topContainer.appendChild(nameValue);
             topContainer.appendChild(dateValue);
 
             const commentValue = document.createElement('p');
-            commentValue.classList.add('comments-list__item-comment')
+            commentValue.classList.add('comments-list__item-combox__comment')
             commentValue.innerHTML = comment.comment;
 
-            cardContainer.appendChild(topContainer);
-            cardContainer.appendChild(commentValue); 
-
-        const avatarContainer = document.createElement('div');
-        avatarContainer.classList.add('comments__avatar');
-
-            const avatar = document.createElement('div');
-            avatar.classList.add('comments__avatar-img');
-            
-            avatarContainer.appendChild(avatar);
+            cardContainer2.appendChild(topContainer);
+            cardContainer2.appendChild(commentValue); 
         
-    cardContainer.appendChild(cardContainer2);
-    cardContainer.appendChild(avatarContainer);    
-
+        cardContainer.appendChild(avatar);
+        cardContainer.appendChild(cardContainer2);
+        
+   
     commentsList.appendChild(cardContainer);
 
     console.log(cardContainer);
@@ -69,16 +68,16 @@ function createcommentCard(comment) {
 createcommentCard();
 
 function renderCommentCards() {
-    const commentsElem = document.querySelector(".comments-list");
+    const commentsElem = document.getElementById("comments-list");
     commentsElem.innerHTML = "";
 
     for (let i = 0; i < comments.length; i++) {
         const card = createcommentCard(comments[i]);
         commentsElem.appendChild(card);
     }
-};
+}
 
-renderCommentCards();
+// renderCommentCards();
 
 function getCurrentDate() {
     const now = new Date();
