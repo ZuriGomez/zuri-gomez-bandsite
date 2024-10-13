@@ -111,7 +111,7 @@ p {
 }
 @media screen and (min-width: 1024px) {
   .header {
-    padding: 0 5rem;
+    padding: 0 8rem;
   }
 }
 .header__link {
@@ -126,9 +126,24 @@ p {
   height: 2rem;
 }
 @media screen and (min-width: 768px) {
+  .header__link--logo {
+    height: 1.7rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__link--logo {
+    height: 1.3rem;
+  }
+}
+@media screen and (min-width: 768px) {
   .header__nav {
     display: flex;
     margin-left: 6.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__nav {
+    margin-left: 4rem;
   }
 }
 .header__nav--list {
@@ -172,6 +187,12 @@ p {
     display: flex;
     align-items: center;
     padding-bottom: 0;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__nav--link {
+    font-size: 0.9rem;
   }
 }
 .header__nav--link-active {
@@ -194,6 +215,8 @@ footer {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 2rem;
+  z-index: 1;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   footer {
@@ -254,6 +277,12 @@ footer .footer-contacts__social--icons {
   justify-content: left;
   gap: 3rem;
 }
+@media screen and (min-width: 768px) {
+  footer .footer-contacts__social--icons {
+    gap: 2.5rem;
+    padding-top: 2.2rem;
+  }
+}
 @media screen and (min-width: 1024px) {
   footer .footer-contacts__social--icons {
     gap: 2rem;
@@ -261,6 +290,11 @@ footer .footer-contacts__social--icons {
 }
 footer .footer-contacts__social--icons-icon {
   height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  footer .footer-contacts__social--icons-icon {
+    height: 1.8rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   footer .footer-contacts__social--icons-icon {
@@ -367,8 +401,8 @@ footer .footer-logo {
 @media screen and (min-width: 768px) {
   footer .footer-logo {
     position: absolute;
-    left: 48rem;
-    bottom: 23rem;
+    left: 40rem;
+    bottom: 32rem;
     padding-top: 5rem;
     z-index: 2;
     margin: 0;
@@ -379,7 +413,7 @@ footer .footer-logo {
   footer .footer-logo {
     position: absolute;
     left: 60rem;
-    bottom: 20rem;
+    bottom: 25rem;
     padding-top: 5rem;
     z-index: 2;
     margin: 0;
@@ -387,6 +421,16 @@ footer .footer-logo {
 }
 footer .footer-logo__img {
   height: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  footer .footer-logo__img {
+    height: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  footer .footer-logo__img {
+    height: 1.3rem;
+  }
 }
 footer .copyright {
   padding-top: 1rem;

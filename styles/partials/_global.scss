@@ -100,7 +100,7 @@ p {
     }
 
     @include desktop {
-        padding: 0 5rem;
+        padding: 0 8rem;
     }
 
     &__link {
@@ -113,6 +113,14 @@ p {
 
         &--logo {
             height: 2rem;
+
+            @include tablet {
+                height: 1.7rem;
+            }
+
+            @include desktop {
+                height: 1.3rem;
+            }
         }
     }
 
@@ -121,6 +129,11 @@ p {
             display: flex;
             margin-left: 6.5rem;
         }
+
+        @include desktop {
+            margin-left: 4rem;
+        }
+
 
         &--list {
             margin: 0;
@@ -165,7 +178,12 @@ p {
             display: flex;
             align-items: center;
             padding-bottom: 0;
-            }
+            font-size: 1rem;
+        }
+
+        @include desktop {
+            font-size: 0.9rem;
+        }
 
         &-active {
             @include underline;
@@ -186,8 +204,8 @@ footer {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top:2rem;
-    // z-index: 1;
-    // position: relative;
+    z-index: 1;
+    position: relative;
 
     @include tablet {
         padding-left: 3rem;
@@ -243,12 +261,21 @@ footer {
                     justify-content: left;
                     gap: 3rem;
 
+                    @include tablet {
+                        gap: 2.5rem;
+                        padding-top: 2.2rem;
+                    }
+
                     @include desktop {
                         gap:2rem;
                     }
 
                     &-icon {
                         height: 2rem;
+
+                        @include tablet {
+                            height:1.8rem;
+                        }
                     
                         @include desktop {
                             height: 1.5rem;
@@ -359,18 +386,18 @@ footer {
 
             @include tablet {
                 position: absolute;
-                left:48rem;
-                bottom:23rem;
-                padding-top: 5rem;
+                left:40rem;
+                bottom:32rem;
+                padding-top:5rem;
                 z-index: 2;
                 margin: 0;
-                width:10rem
+                width:10rem;
             }
 
             @include desktop {
                 position: absolute;
                 left:60rem;
-                bottom:20rem;
+                bottom:25rem;
                 padding-top: 5rem;
                 z-index: 2;
                 margin: 0;
@@ -378,6 +405,14 @@ footer {
 
             &__img {
                 height: 2.5rem;
+
+                @include tablet {
+                    height: 1.5rem;
+                }
+
+                @include desktop {
+                    height: 1.3rem;
+                }
             }
 
         }

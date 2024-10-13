@@ -111,7 +111,7 @@ p {
 }
 @media screen and (min-width: 1024px) {
   .header {
-    padding: 0 5rem;
+    padding: 0 8rem;
   }
 }
 .header__link {
@@ -126,9 +126,24 @@ p {
   height: 2rem;
 }
 @media screen and (min-width: 768px) {
+  .header__link--logo {
+    height: 1.7rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__link--logo {
+    height: 1.3rem;
+  }
+}
+@media screen and (min-width: 768px) {
   .header__nav {
     display: flex;
     margin-left: 6.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__nav {
+    margin-left: 4rem;
   }
 }
 .header__nav--list {
@@ -172,6 +187,12 @@ p {
     display: flex;
     align-items: center;
     padding-bottom: 0;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__nav--link {
+    font-size: 0.9rem;
   }
 }
 .header__nav--link-active {
@@ -194,6 +215,8 @@ footer {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 2rem;
+  z-index: 1;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   footer {
@@ -254,6 +277,12 @@ footer .footer-contacts__social--icons {
   justify-content: left;
   gap: 3rem;
 }
+@media screen and (min-width: 768px) {
+  footer .footer-contacts__social--icons {
+    gap: 2.5rem;
+    padding-top: 2.2rem;
+  }
+}
 @media screen and (min-width: 1024px) {
   footer .footer-contacts__social--icons {
     gap: 2rem;
@@ -261,6 +290,11 @@ footer .footer-contacts__social--icons {
 }
 footer .footer-contacts__social--icons-icon {
   height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  footer .footer-contacts__social--icons-icon {
+    height: 1.8rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   footer .footer-contacts__social--icons-icon {
@@ -367,8 +401,8 @@ footer .footer-logo {
 @media screen and (min-width: 768px) {
   footer .footer-logo {
     position: absolute;
-    left: 48rem;
-    bottom: 23rem;
+    left: 40rem;
+    bottom: 32rem;
     padding-top: 5rem;
     z-index: 2;
     margin: 0;
@@ -379,7 +413,7 @@ footer .footer-logo {
   footer .footer-logo {
     position: absolute;
     left: 60rem;
-    bottom: 20rem;
+    bottom: 25rem;
     padding-top: 5rem;
     z-index: 2;
     margin: 0;
@@ -387,6 +421,16 @@ footer .footer-logo {
 }
 footer .footer-logo__img {
   height: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  footer .footer-logo__img {
+    height: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  footer .footer-logo__img {
+    height: 1.3rem;
+  }
 }
 footer .copyright {
   padding-top: 1rem;
@@ -432,7 +476,7 @@ footer .copyright {
 }
 @media screen and (min-width: 1024px) {
   .hero__title {
-    padding-left: 4rem;
+    padding-left: 8rem;
     font-weight: 600;
     font-size: 3.8rem;
   }
@@ -687,6 +731,18 @@ footer .copyright {
   padding-right: 1rem;
   flex-direction: column;
 }
+@media screen and (min-width: 768px) {
+  .comments {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
 .comments-title {
   padding-bottom: 1rem;
   color: #323232;
@@ -694,14 +750,36 @@ footer .copyright {
   font-size: 2.5rem;
   padding-top: 2rem;
 }
+@media screen and (min-width: 768px) {
+  .comments-title {
+    padding-top: 2.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments-title {
+    font-size: 2.5rem;
+  }
+}
 .comments-box {
   display: flex;
   flex-direction: row;
-  padding-left: 1rem;
   padding-bottom: 1rem;
-  padding-right: 1rem;
   gap: 1.5rem;
-  border-bottom: 3px solid #E1E1E1;
+  border-bottom: 2px solid #E1E1E1;
+}
+@media screen and (min-width: 768px) {
+  .comments-box {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    gap: 1rem;
+    border-bottom: 1px solid #E1E1E1;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments-box {
+    margin-left: 16rem;
+    margin-right: 16rem;
+  }
 }
 .comments-box__avatar {
   width: 4rem;
@@ -711,11 +789,33 @@ footer .copyright {
      object-fit: cover;
   margin-top: 2rem;
 }
+@media screen and (min-width: 768px) {
+  .comments-box__avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments-box__avatar {
+    width: 3.3rem;
+    height: 3.3rem;
+  }
+}
 .comments-box__form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .comments-box__form {
+    gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments-box__form {
+    gap: 1rem;
+  }
 }
 .comments-box__form-label {
   font-size: 1rem;
@@ -725,14 +825,34 @@ footer .copyright {
   padding-top: 1rem;
   line-height: 0.2rem;
 }
+@media screen and (min-width: 768px) {
+  .comments-box__form-label {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments-box__form-label {
+    font-size: 0.825rem;
+  }
+}
 .comments-box__form-textarea {
-  border: 0.1rem solid #AFAFAF;
+  border: 0.1rem solid #E1E1E1;
   border-radius: 5px;
   background-color: #fafafa;
   resize: none;
   width: 31rem;
   padding-left: 1rem;
   padding-top: 0.8rem;
+}
+@media screen and (min-width: 768px) {
+  .comments-box__form-textarea {
+    width: 37rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments-box__form-textarea {
+    width: 28rem;
+  }
 }
 .comments-box__form-textarea::-moz-placeholder {
   font-size: 1.3rem;
@@ -747,6 +867,22 @@ footer .copyright {
   color: #000000;
   text-align: left;
   align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .comments-box__form-textarea::-moz-placeholder {
+    font-size: 1rem;
+  }
+  .comments-box__form-textarea::placeholder {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments-box__form-textarea::-moz-placeholder {
+    font-size: 0.825rem;
+  }
+  .comments-box__form-textarea::placeholder {
+    font-size: 0.825rem;
+  }
 }
 .comments-box__form #name {
   height: 3.5rem;
@@ -765,6 +901,21 @@ footer .copyright {
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
+@media screen and (min-width: 768px) {
+  .comments-box__form-button {
+    margin-left: 28rem;
+    padding: 1rem 0.5rem;
+    font-size: 1.3rem;
+    border-radius: 0.4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments-box__form-button {
+    margin-left: 15rem;
+    padding: 1rem 0rem;
+    font-size: 1rem;
+  }
+}
 .comments-list {
   display: flex;
   justify-content: flex-start;
@@ -774,7 +925,23 @@ footer .copyright {
   flex-direction: row;
   padding-left: 1rem;
   padding-right: 1rem;
-  border-bottom: 3px solid #E1E1E1;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #E1E1E1;
+}
+@media screen and (min-width: 768px) {
+  .comments-list__item {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    gap: 1rem;
+    border-bottom: 1px solid #E1E1E1;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments-list__item {
+    margin-left: 14rem;
+    margin-right: 14rem;
+    gap: 1rem;
+  }
 }
 .comments-list__item-avatar {
   width: 4rem;
@@ -784,6 +951,12 @@ footer .copyright {
   margin-top: 3rem;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media screen and (min-width: 1024px) {
+  .comments-list__item-avatar {
+    width: 3.3rem;
+    height: 3.3rem;
+  }
 }
 .comments-list__item-combox {
   display: flex;
