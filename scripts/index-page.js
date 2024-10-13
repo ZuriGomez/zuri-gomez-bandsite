@@ -25,8 +25,8 @@ function createcommentCard(comment) {
     cardContainer.classList.add("comments-list__item")
     
 
-        // const cardContainer2 = document.createElement('div');
-        // cardContainer2.classList.add("comments-list__item-top")
+        const cardContainer2 = document.createElement('div');
+        cardContainer2.classList.add("comments-list__item-top")
 
             const topContainer = document.createElement('div');
             topContainer.classList.add("comments-list__item-top")
@@ -49,24 +49,23 @@ function createcommentCard(comment) {
             cardContainer.appendChild(topContainer);
             cardContainer.appendChild(commentValue); 
 
-        // const avatarContainer = document.createElement('div');
-        // avatarContainer.classList.add('comments__avatar');
+        const avatarContainer = document.createElement('div');
+        avatarContainer.classList.add('comments__avatar');
 
-        //     const avatar = document.createElement('div');
-        //     avatar.classList.add('comments__avatar-img');
+            const avatar = document.createElement('div');
+            avatar.classList.add('comments__avatar-img');
             
-        //     avatarContainer.appendChild(avatar);
+            avatarContainer.appendChild(avatar);
         
-    // cardContainer.appendChild(cardContainer2);
-    // cardContainer.appendChild(avatarContainer);    
-    
+    cardContainer.appendChild(cardContainer2);
+    cardContainer.appendChild(avatarContainer);    
+
     commentsList.appendChild(cardContainer);
 
     console.log(cardContainer);
-    // return cardContainer;
+    return cardContainer;
 })
 }
-
 createcommentCard();
 
 function renderCommentCards() {
@@ -91,7 +90,7 @@ function getCurrentDate() {
 
 // renderCommentCards();
 
-const formEl = document.querySelector(".comments-form");
+const formEl = document.querySelector(".comments-box__form");
 
 formEl.addEventListener("submit", (event) =>{
     event.preventDefault();
@@ -110,6 +109,8 @@ formEl.addEventListener("submit", (event) =>{
 
     renderCommentCards();
 
-    // formEl.reset();
+    formEl.reset();
 });
+
+renderCommentCards();
 

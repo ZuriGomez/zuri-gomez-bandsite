@@ -86,11 +86,10 @@ p {
 
 .header {
   background-color: $primary-color-bandSite-Black;
-  height: 7rem;
+  height: 8rem;
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
-  padding-bottom: 1.5rem;
   justify-content: space-between;
 
     @include tablet {

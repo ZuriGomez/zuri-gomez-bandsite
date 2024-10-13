@@ -95,11 +95,10 @@ p {
 
 .header {
   background-color: #323232;
-  height: 7rem;
+  height: 8rem;
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
-  padding-bottom: 1.5rem;
   justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
@@ -333,7 +332,6 @@ p {
   }
 }
 .about__content--subtitle {
-  padding-bottom: 1rem;
   padding-top: 2rem;
   font-weight: 400;
 }
@@ -353,7 +351,6 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
@@ -369,7 +366,7 @@ p {
 }
 .about__content--biography-text {
   line-height: 1.125rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
   line-height: 2rem;
   font-size: 1.3rem;
 }
@@ -465,39 +462,82 @@ p {
   padding-left: 1rem;
   flex-direction: column;
 }
-.comments__title {
+.comments-title {
   padding-bottom: 1rem;
+  color: #323232;
+  font-weight: 600;
+  font-size: 2.5rem;
+  padding-top: 2rem;
 }
-.comments-form {
+.comments-box {
+  display: flex;
+  flex-direction: row;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  gap: 1.5rem;
+  border-bottom: 3px solid #E1E1E1;
+}
+.comments-box__avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 2rem;
+}
+.comments-box__form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1.5rem;
-  border-bottom: 3px solid #E1E1E1;
 }
-.comments-form__label {
-  font-size: 2rem;
+.comments-box__form-label {
+  font-size: 1rem;
   color: #AFAFAF;
   font-family: "Avenir-Next";
   font-weight: 600;
   padding-top: 1rem;
   line-height: 0.2rem;
 }
-.comments-form__textarea {
+.comments-box__form-textarea {
   border: 0.1rem solid #AFAFAF;
   border-radius: 5px;
+  background-color: #fafafa;
+  resize: none;
+  width: 30rem;
+  padding-left: 1rem;
+  padding-top: 0.8rem;
 }
-.comments-form__button {
-  box-sizing: border-box;
+.comments-box__form-textarea::-moz-placeholder {
+  font-size: 1.3rem;
+  font-family: "Avenir-Next";
+  color: #000000;
+  text-align: left;
+  align-items: center;
+}
+.comments-box__form-textarea::placeholder {
+  font-size: 1.3rem;
+  font-family: "Avenir-Next";
+  color: #000000;
+  text-align: left;
+  align-items: center;
+}
+.comments-box__form #name {
+  height: 3.5rem;
+}
+.comments-box__form #comment {
+  height: 9rem;
+}
+.comments-box__form-button {
   background-color: #323232;
   color: #ffffff;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 .comments-list {
   display: flex;
