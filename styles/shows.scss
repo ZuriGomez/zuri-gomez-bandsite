@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-content: center;
     
     &__subtitle {
         color: $primary-color-White;
@@ -18,32 +19,57 @@
         font-size: 1.5rem;
         font-weight: 400;
         margin-top:4rem;
-    }
 
-    &__title {
-        color: $primary-color-White;
-        padding-left: 1rem;
-        font-size: 3rem;
-        font-weight: 600;
-        line-height: 3.5rem;
-        margin: 0;
-        padding-bottom: 2rem;
-    
         @include tablet {
             padding-left: 3rem;
-            font-size: 4rem;
+            font-size: 1.8rem; 
         }
 
         @include desktop {
-            padding-left: 4rem;
-            font-weight: 600;
-            font-size:3.8rem;
+            padding-left: 8rem;
         }
     }
-    &__soundcloud {
-        align-self:left;
-        padding-left: 1rem;
-        padding-right: 1rem;
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left:1rem;
+
+        @include tablet {
+            padding-left: 3rem;
+        }
+
+        @include desktop {
+            padding-left: 8rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &--title {
+            color: $primary-color-White;
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 3.5rem;
+            margin: 0;
+            padding-bottom: 2rem;
+        
+            @include tablet {
+                font-size: 4.2rem;
+                line-height: 5rem;
+            }
+
+            @include desktop {
+                font-weight: 600;
+                font-size:3.4rem;
+            }
+        }
+
+        &--soundcloud {
+            align-self:left;
+            padding-right: 1rem;
+        }
     }
 }
 
@@ -60,6 +86,14 @@
         font-size:3rem;
         padding-top: 2rem;
         font-weight: 600;
+
+        @include tablet {
+            padding-left: 3rem;
+        }
+    
+        @include desktop {
+            padding-left: 8rem;
+        }
     }
 
     &__item {
@@ -67,7 +101,7 @@
         display: flex;
         flex-direction: column;
         justify-content:flex-start;
-        padding-top: 2rem;
+        padding-top: 1rem;
 
         &::after {
             content: '';
@@ -81,7 +115,7 @@
         }
     
         &--label{
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: $primary-color-Silver;
             font-family: $avenir-next;
             font-weight: 600;
@@ -90,13 +124,13 @@
         }
 
         &--value {
-            font-size: 2rem;
+            font-size: 1.7rem;
             color: $primary-color-bandSite-Black;
             font-family: $avenir-next;
         
             &-highlighted {
                 font-weight: 600;
-                font-size: 2rem;
+                font-size: 1.7rem;
                 color: $primary-color-bandSite-Black;
                 font-family: $avenir-next;
             }
@@ -107,13 +141,40 @@
         box-sizing: border-box;
         background-color:$primary-color-bandSite-Black;
         color: $primary-color-White;
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
         border: none;
         cursor: pointer;
         border-radius: 5px;
         margin-top: 2rem;
         margin-bottom: 2rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
         font-size: 2rem;
     }
-    
+
+}
+
+@media (min-width: 768px) {
+    .shows-list {
+        display: table;
+        width: 100%;
+    }
+
+    .shows__item {
+        display: table-row;
+
+        &--label, &--value, &--value-highlighted, &__button {
+            display: table-cell;
+            padding: 0.5rem;
+        }
+
+        &--label {
+            font-weight: 700;
+        }
+
+        &__button {
+            text-align: center;
+        }
+    }
+
 }

@@ -31,8 +31,24 @@ const shows= [
     }
 ]
 
+
 function uploadShows() {
     const showsList = document.getElementById("shows-list");
+
+    if(window.innerWidth >= 768) {
+    const headerRow = document.createElement('div');
+    headerRow.classList.add('shows__item', 'shows__item--header');
+    
+    const headers = ["DATE", "VENUE", "LOCATION", " "];
+    headers.forEach(headerText => {
+        const header = document.createElement('div');
+        header.classList.add('shows__item--label');
+        header.textContent = headerText;
+        headerRow.appendChild(header);
+    });
+    
+    showsList.appendChild(headerRow);
+}
 
     shows.forEach(show => {
         const showContainer = document.createElement('div');
@@ -40,7 +56,7 @@ function uploadShows() {
 
         const dateLabel = document.createElement('p');
         dateLabel.classList.add('shows__item--label')
-        dateLabel.textContent = "DATE:";
+        dateLabel.textContent = "DATE";
         
         const dateValue = document.createElement('p');
         dateValue.classList.add('shows__item--value-highlighted')
@@ -48,7 +64,7 @@ function uploadShows() {
         
         const venueLabel = document.createElement('p');
         venueLabel.classList.add('shows__item--label')
-        venueLabel.textContent = "VENUE:";
+        venueLabel.textContent = "VENUE";
         
         const venueValue = document.createElement('p');
         venueValue.classList.add('shows__item--value')
@@ -56,7 +72,7 @@ function uploadShows() {
         
         const locationLabel = document.createElement('p');
         locationLabel.classList.add('shows__item--label')
-        locationLabel.textContent = "LOCATION:";
+        locationLabel.textContent = "LOCATION";
         
         const locationValue = document.createElement('p');
         locationValue.classList.add('shows__item--value')
