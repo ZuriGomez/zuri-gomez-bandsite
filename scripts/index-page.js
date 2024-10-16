@@ -26,7 +26,7 @@ function createcommentCard(comment) {
     
         const avatar = document.createElement('img');
         avatar.classList.add('comments-list__item-avatar'); 
-        avatar.src = '.../Images/Mohan-muruge.jpg'; 
+        avatar.src = './assets/Images/Mohan-muruge.jpg'; 
         avatar.alt = 'Avatar placeholder';
 
         const cardContainer2 = document.createElement('div');

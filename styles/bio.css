@@ -937,9 +937,10 @@ footer .copyright {
 }
 @media screen and (min-width: 1024px) {
   .comments-list__item {
-    margin-left: 14rem;
-    margin-right: 14rem;
-    gap: 1rem;
+    margin-left: 16rem;
+    margin-right: 4rem;
+    gap: 0;
+    border-bottom: 1px solid #E1E1E1;
   }
 }
 .comments-list__item-avatar {
