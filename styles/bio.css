@@ -923,15 +923,14 @@ footer .copyright {
 .comments-list__item {
   display: flex;
   flex-direction: row;
-  padding-left: 1rem;
-  padding-right: 1rem;
   padding-bottom: 2rem;
   border-bottom: 2px solid #E1E1E1;
+  gap: 1rem;
 }
 @media screen and (min-width: 768px) {
   .comments-list__item {
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
     gap: 1rem;
     border-bottom: 1px solid #E1E1E1;
   }
@@ -952,6 +951,12 @@ footer .copyright {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media screen and (min-width: 768px) {
+  .comments-list__item-avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
 @media screen and (min-width: 1024px) {
   .comments-list__item-avatar {
     width: 3.3rem;
@@ -962,9 +967,9 @@ footer .copyright {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-left: 3rem;
-  padding-right: 1rem;
   padding-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .comments-list__item-combox__top {
   display: flex;

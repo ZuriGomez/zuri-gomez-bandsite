@@ -35,64 +35,72 @@ const shows= [
 function uploadShows() {
     const showsList = document.getElementById("shows-list");
 
-    if(window.innerWidth >= 768) {
-    const headerRow = document.createElement('div');
-    headerRow.classList.add('shows__item', 'shows__item--header');
-    
-    const headers = ["DATE", "VENUE", "LOCATION", " "];
-    headers.forEach(headerText => {
-        const header = document.createElement('div');
-        header.classList.add('shows__item--label');
-        header.textContent = headerText;
-        headerRow.appendChild(header);
-    });
-    
-    showsList.appendChild(headerRow);
-}
+    const tableHeaders = document.createElement('div');
+    tableHeaders.classList.add('shows-list__header');
+
+        const headerDate = document.createElement('p');
+        headerDate.classList.add('shows-list__header-date');
+        headerDate.textContent = "DATE";
+
+        const headerVenue = document.createElement('p');
+        headerVenue.classList.add('shows-list__header-venue');
+        headerVenue.textContent = "VENUE";
+
+        const headerLocation = document.createElement('p');
+        headerLocation.classList.add('shows-list__header-location');
+        headerLocation.textContent = "LOCATION";
+
+        const headerSpace = document.createElement('p');
+        headerSpace.classList.add('shows-list__header-space');
+        headerSpace.textContent = "   ";
+
+        tableHeaders.appendChild(headerDate);
+        tableHeaders.appendChild(headerVenue);
+        tableHeaders.appendChild(headerLocation);
+        tableHeaders.appendChild(headerSpace)
+
+    showsList.appendChild(tableHeaders);
 
     shows.forEach(show => {
         const showContainer = document.createElement('div');
-        showContainer.classList.add('shows__item');
+        showContainer.classList.add('shows-list__item');
 
-        const dateLabel = document.createElement('p');
-        dateLabel.classList.add('shows__item--label')
-        dateLabel.textContent = "DATE";
-        
-        const dateValue = document.createElement('p');
-        dateValue.classList.add('shows__item--value-highlighted')
-        dateValue.textContent = show.date;
-        
-        const venueLabel = document.createElement('p');
-        venueLabel.classList.add('shows__item--label')
-        venueLabel.textContent = "VENUE";
-        
-        const venueValue = document.createElement('p');
-        venueValue.classList.add('shows__item--value')
-        venueValue.textContent = show.venue;
-        
-        const locationLabel = document.createElement('p');
-        locationLabel.classList.add('shows__item--label')
-        locationLabel.textContent = "LOCATION";
-        
-        const locationValue = document.createElement('p');
-        locationValue.classList.add('shows__item--value')
-        locationValue.textContent = show.location;
+            const dateLabel = document.createElement('p');
+            dateLabel.classList.add('shows-list__item--label');
+            dateLabel.textContent = "DATE";
+            const dateValue = document.createElement('p');
+            dateValue.classList.add('shows-list__item--value-highlighted');
+            dateValue.textContent = show.date;
+            
+            const venueLabel = document.createElement('p');
+            venueLabel.classList.add('shows-list__item--label');
+            venueLabel.textContent = "VENUE";
+            const venueValue = document.createElement('p');
+            venueValue.classList.add('shows-list__item--value');
+            venueValue.textContent = show.venue;
+            
+            const locationLabel = document.createElement('p');
+            locationLabel.classList.add('shows-list__item--label');
+            locationLabel.textContent = "LOCATION";
+            const locationValue = document.createElement('p');
+            locationValue.classList.add('shows-list__item--value');
+            locationValue.textContent = show.location;
 
-        showContainer.appendChild(dateLabel);
-        showContainer.appendChild(dateValue);
-        showContainer.appendChild(venueLabel);
-        showContainer.appendChild(venueValue);
-        showContainer.appendChild(locationLabel);
-        showContainer.appendChild(locationValue);
+            showContainer.appendChild(dateLabel);
+            showContainer.appendChild(dateValue);
+            showContainer.appendChild(venueLabel);
+            showContainer.appendChild(venueValue);
+            showContainer.appendChild(locationLabel);
+            showContainer.appendChild(locationValue);
 
-        
-        const button = document.createElement('button');
-        button.textContent = "BUY TICKETS";
-        button.classList.add("shows__button");
+            const button = document.createElement('button');
+            button.textContent = "BUY TICKETS";
+            button.classList.add("shows-list__button");
 
-        showContainer.appendChild(button);
+            showContainer.appendChild(button);
 
         showsList.appendChild(showContainer);
+    
     });
 }
 

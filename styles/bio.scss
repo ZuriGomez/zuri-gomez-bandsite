@@ -450,14 +450,15 @@
         &__item {
             display: flex;
             flex-direction: row;
-            padding-left: 1rem;
-            padding-right: 1rem;
+            // padding-left: 1rem;
+            // padding-right: 1rem;
             padding-bottom: 2rem;
             border-bottom: 2px solid $secondary-color-Mercury;
+            gap: 1rem;
 
             @include tablet {
-                margin-left: 4rem;
-                margin-right: 4rem;
+                margin-left: 3rem;
+                margin-right: 3rem;
                 gap: 1rem;
                 border-bottom: 1px solid $secondary-color-Mercury;
             }
@@ -476,6 +477,11 @@
                 margin-top: 3rem;
                 object-fit: cover;
 
+                @include tablet {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                }
+
                 @include desktop {
                     width: 3.3rem;
                     height: 3.3rem;
@@ -487,9 +493,11 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 // gap:0.5rem;
-                padding-left: 3rem;
-                padding-right: 1rem;
+                // padding-left: 1rem;
+                // padding-right: 1rem;
                 padding-top: 1rem;
+                margin-left: 1rem;
+                margin-right: 1rem;
 
                 &__top {
                     display: flex;

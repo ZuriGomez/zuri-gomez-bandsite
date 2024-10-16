@@ -27,6 +27,8 @@
 
         @include desktop {
             padding-left: 8rem;
+            padding-top: 5rem;
+            font-size: 1.5rem;
         }
     }
 
@@ -69,6 +71,12 @@
         &--soundcloud {
             align-self:left;
             padding-right: 1rem;
+
+            @include desktop {
+                margin-left: 6rem;
+                margin-right: 5rem;
+                padding: 0;
+            }
         }
     }
 }
@@ -76,105 +84,189 @@
 .shows {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-left:1rem;
+    justify-content: flex-start;
     padding-bottom: 2rem;
 
-    &__title {
+    @include tablet {
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+
+    @include desktop {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap:3rem;
+        margin-right: 6rem;
+    }
+
+    &-title {
         color: $secondary-color-BandSite-DarkBlack;
         font-weight: 600;
         font-size:3rem;
         padding-top: 2rem;
         font-weight: 600;
+        margin-left: 1rem;
+        margin-right: 1rem;
 
         @include tablet {
-            padding-left: 3rem;
+            margin:3rem 1.5rem;
         }
     
         @include desktop {
-            padding-left: 8rem;
+            padding-left: 5rem;
+            font-size: 2.5rem;
         }
     }
 
-    &__item {
-        // border-bottom: 3px solid $secondary-color-Mercury;
+    &-list {
         display: flex;
         flex-direction: column;
-        justify-content:flex-start;
-        padding-top: 1rem;
 
-        &::after {
-            content: '';
-            position:relative;
-            left: 0;
-            bottom: 0;
-            width: 100vw;
-            height: 3px;
-            background-color: $secondary-color-Mercury;
-            transform: translateX(-1rem);
+        @include desktop {
+            padding-left: 15rem;
+            margin-right: 5rem;
         }
-    
-        &--label{
-            font-size: 1.5rem;
-            color: $primary-color-Silver;
-            font-family: $avenir-next;
-            font-weight: 600;
+
+        &__header {
+            display: none;
+
+            @include tablet {
+                display: flex;
+                justify-content: flex-start;
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+                font-size: 1rem;
+                color: $primary-color-Silver;
+                font-weight: 700;
+                text-align: left;
+            }
+
+            @include desktop {
+                padding-top: 5.5rem;
+                font-size: .825rem;
+                text-align: left;
+            }
+
+
+            &-date, &-venue {
+                // flex: 1.5;
+                text-align: left;
+                width: 30%;
+
+            }
+
+            &-location {
+                // flex-grow: 1.5;
+                text-align: left;
+                width: 30%;
+            }
+
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            justify-content:flex-start;
             padding-top: 1rem;
-            line-height: 0.2rem;
-        }
+            border-bottom: 3px solid $secondary-color-Mercury;
 
-        &--value {
-            font-size: 1.7rem;
-            color: $primary-color-bandSite-Black;
-            font-family: $avenir-next;
-        
-            &-highlighted {
+            @include tablet {
+                flex-direction: row;
+                // justify-content: space-between;
+                gap:2rem;
+                align-items: center;
+                margin: 0;
+                border-bottom: 1.5px solid $secondary-color-Mercury;
+            }
+
+            &--label {
+                font-size: 1.5rem;
+                color: $primary-color-Silver;
+                font-family: $avenir-next;
                 font-weight: 600;
+                padding-top: 1rem;
+                line-height: 0.2rem;
+                margin-left: 1rem;
+                margin-right: 1rem;
+
+                @include tablet {
+                    display: none;
+                    visibility: hidden;
+                }
+
+                @include desktop {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+
+            &--value {
                 font-size: 1.7rem;
                 color: $primary-color-bandSite-Black;
                 font-family: $avenir-next;
+                margin-left: 1rem;
+                margin-right: 1rem;
+
+                @include tablet {
+                    margin: 0;
+                    font-size: 1.3rem;
+                    text-align: left;
+                }
+
+                @include desktop {
+                    font-size: 1rem;
+                    text-align: left;
+                    width: 30%;
+                }
+            
+                &-highlighted {
+                    font-weight: 600;
+                    font-size: 1.7rem;
+                    color: $primary-color-bandSite-Black;
+                    font-family: $avenir-next;
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+
+                    @include tablet {
+                        margin: 1.5rem;
+                        font-size: 1.3rem;
+                        text-align: left;
+                    }
+
+                    @include desktop {
+                        font-size: 1rem;
+                        text-align: left;
+                        width: 30%;
+                    }
+                }
             }
-        }
-    }
-
-    &__button {
-        box-sizing: border-box;
-        background-color:$primary-color-bandSite-Black;
-        color: $primary-color-White;
-        padding: 1.5rem 1rem;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        margin-right: 2rem;
-        margin-left: 2rem;
-        font-size: 2rem;
-    }
-
-}
-
-@media (min-width: 768px) {
-    .shows-list {
-        display: table;
-        width: 100%;
-    }
-
-    .shows__item {
-        display: table-row;
-
-        &--label, &--value, &--value-highlighted, &__button {
-            display: table-cell;
-            padding: 0.5rem;
-        }
-
-        &--label {
-            font-weight: 700;
         }
 
         &__button {
-            text-align: center;
+            box-sizing: border-box;
+            background-color:$primary-color-bandSite-Black;
+            color: $primary-color-White;
+            padding: 1.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 1rem;
+            font-size: 2rem;
+
+            @include tablet {
+                font-size: 1.3rem;
+                padding:1rem 2.5rem;
+            }
+
+            @include desktop {
+                font-size: 1rem;
+                width:18rem;
+                padding:0.8rem 0;
+            }
+
         }
+
     }
 
 }
