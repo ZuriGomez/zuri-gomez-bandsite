@@ -1,38 +1,17 @@
-const shows= [
-    {
-        date: "Mon Sept 09 2024",
-        venue: "Ronald Lane",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Tue Sept 17 2024",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Sat Oct 12 2024",
-        venue: "View Lounge",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Sat Nov 16 2024",
-        venue: "Hyatt Agency",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Friday Nov 29 2024",
-        venue: "Moscow Center",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Wed Dec 18 2024",
-        venue: "Press Club",
-        location: "San Francisco, CA"
+let apiKey = null;
+let bandSiteApi = null;
+
+async function initializeAPI() {
+    apiKey = await register(); // Pull API Key from registration function
+    if (apiKey) {
+        bandSiteApi = new BandSiteApi(apiKey);
+        await uploadShows();
+    } else {
+        console.error('API key could not be retrieved.');
     }
-]
+}
 
-
-function uploadShows() {
+async function uploadShows() {
     const showsList = document.getElementById("shows-list");
 
     const tableHeaders = document.createElement('div');
@@ -61,23 +40,33 @@ function uploadShows() {
 
     showsList.appendChild(tableHeaders);
 
+    const shows = await bandSiteApi.getShows();
+    
     shows.forEach(show => {
         const showContainer = document.createElement('div');
         showContainer.classList.add('shows-list__item');
+
+        const showDate = new Date(show.date);
+        const formattedDate = showDate.toLocaleDateString('en-US',{
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: '2-digit',
+        });
 
             const dateLabel = document.createElement('p');
             dateLabel.classList.add('shows-list__item--label');
             dateLabel.textContent = "DATE";
             const dateValue = document.createElement('p');
             dateValue.classList.add('shows-list__item--value-highlighted');
-            dateValue.textContent = show.date;
+            dateValue.textContent = formattedDate;
             
             const venueLabel = document.createElement('p');
             venueLabel.classList.add('shows-list__item--label');
             venueLabel.textContent = "VENUE";
             const venueValue = document.createElement('p');
             venueValue.classList.add('shows-list__item--value');
-            venueValue.textContent = show.venue;
+            venueValue.textContent = show.place;
             
             const locationLabel = document.createElement('p');
             locationLabel.classList.add('shows-list__item--label');
@@ -104,4 +93,8 @@ function uploadShows() {
     });
 }
 
-uploadShows();
+// uploadShows();
+
+window.onload = () => {
+    initializeAPI ();
+};
