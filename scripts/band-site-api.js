@@ -1,43 +1,91 @@
-// Global variable to store the API key
-let apiKey = '';
-
 // Function to register and get the API key
 async function register() {
     try {
         const response = await fetch('https://unit-2-project-api-25c1595833b2.herokuapp.com/register');
         const data = await response.json();
-        apiKey = data.api_key;  // Store the key in a global variable
+        const apiKey = data.api_key;  
         console.log('Registered successfully. Your API key is:', apiKey);
-    
-        await getComments();
-        await getShowDates();
-    
+
+        const bandSiteApi = new BandSiteApi(apiKey);
+
+        await Promise.all([
+            bandSiteApi.getComments(),
+            bandSiteApi.getShows(),
+            bandSiteApi.postComment({ name: 'John Doe', comment: 'This is a new comment!' }),
+        ]);
     } catch (error) {
         console.error('Error registering:', error);
     }
 }
 
-// Call the register function to get the API key
 register();
 
-// Function to get all comments
-async function getComments() {
-    try {
-        const response = await fetch(`https://unit-2-project-api-25c1595833b2.herokuapp.com/comments?api_key=${apiKey}`);
-        const comments = await response.json();
-        console.log('Comments:', comments);
-    } catch (error) {
-        console.error('Error fetching comments:', error);
+// BandSiteApi class
+class BandSiteApi {
+    constructor(apiKey) {
+        this.apiKey = apiKey;
+        this.baseUrl = 'https://unit-2-project-api-25c1595833b2.herokuapp.com';
     }
-}
 
-// Function to get all show dates
-async function getShowDates() {
-    try {
-        const response = await fetch(`https://unit-2-project-api-25c1595833b2.herokuapp.com/showdates?api_key=${apiKey}`);
-        const showDates = await response.json();
-        console.log('Show Dates:', showDates);
-    } catch (error) {
-        console.error('Error fetching Show Dates:', error);
+    // Method to post a new comment
+    async postComment(comment) {
+        if (!this.apiKey) {
+            console.error('API key not available.');
+            return;
+        }
+        try {
+            const response = await fetch(`${this.baseUrl}/comments?api_key=${this.apiKey}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(comment)
+            });
+
+            if (response.ok) {
+                const newComment = await response.json();
+                console.log('New comment added:', newComment);
+                return newComment;
+            } else {
+                console.error('Failed to post comment. Status:', response.status);
+            }
+        } catch (error) {
+            console.error('Error posting comment:', error);
+        }
+    }
+
+    // Method to get all comments
+    async getComments() {
+        if (!this.apiKey) {
+            console.error('API key not available.');
+            return;
+        }
+        try {
+            const response = await fetch(`${this.baseUrl}/comments?api_key=${this.apiKey}`);
+            const comments = await response.json();
+
+            // Sort comments from newest to oldest
+            comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            console.log('Comments (sorted from newest to oldest):', comments);
+            return comments;
+        } catch (error) {
+            console.error('Error fetching comments:', error);
+        }
+    }
+
+    // Method to get all show dates
+    async getShows() {
+        if (!this.apiKey) {
+            console.error('API key not available.');
+            return;
+        }
+        try {
+            const response = await fetch(`${this.baseUrl}/showdates?api_key=${this.apiKey}`);
+            const showDates = await response.json();
+            console.log('Show Dates:', showDates);
+            return showDates;
+        } catch (error) {
+            console.error('Error fetching Show Dates:', error);
+        }
     }
 }

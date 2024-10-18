@@ -17,9 +17,9 @@ const comments = [
 ];
 
 function createcommentCard(comment) {
-    const commentsList = document.getElementById("comments-list");
+    // const commentsList = document.getElementById("comments-list");
     
-    comments.forEach(comment => {
+    // comments.forEach(comment => {
     
     const cardContainer = document.createElement('div');
     cardContainer.classList.add("comments-list__item")
@@ -57,13 +57,14 @@ function createcommentCard(comment) {
         cardContainer.appendChild(cardContainer2);
         
    
-    commentsList.appendChild(cardContainer);
+    // commentsList.appendChild(cardContainer);
 
     console.log(cardContainer);
     return cardContainer;
-})
+// })
 }
-createcommentCard();
+
+// createcommentCard();
 
 function renderCommentCards() {
     const commentsElem = document.getElementById("comments-list");
@@ -87,7 +88,7 @@ function getCurrentDate() {
 
 const formEl = document.querySelector(".comments-box__form");
 
-formEl.addEventListener("submit", (event) =>{
+formEl.addEventListener("submit", (event) => {
     event.preventDefault();
 
     let cardData = {
