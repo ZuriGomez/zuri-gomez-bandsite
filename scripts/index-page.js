@@ -11,7 +11,7 @@ async function initializeAPI() {
     }
 }
 
-// Initializing form with error handling of API Key.
+// Initializing form with preventDefault
 async function handleFormSubmission(event) {
     event.preventDefault();
 
