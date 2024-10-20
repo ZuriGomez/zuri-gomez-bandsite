@@ -592,7 +592,7 @@ footer .copyright {
   .shows-list__header {
     display: flex;
     justify-content: flex-start;
-    margin-left: 1.5rem;
+    margin-left: 2rem;
     margin-right: 1.5rem;
     font-size: 1rem;
     color: #AFAFAF;
@@ -625,7 +625,6 @@ footer .copyright {
 @media screen and (min-width: 768px) {
   .shows-list__item {
     flex-direction: row;
-    gap: 2rem;
     align-items: center;
     margin: 0;
     border-bottom: 1.5px solid #E1E1E1;
@@ -665,6 +664,7 @@ footer .copyright {
     margin: 0;
     font-size: 1.3rem;
     text-align: left;
+    width: 30%;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -672,6 +672,8 @@ footer .copyright {
     font-size: 1rem;
     text-align: left;
     width: 30%;
+    margin-left: 2rem;
+    margin-right: 1rem;
   }
 }
 .shows-list__item--value-highlighted {
@@ -684,7 +686,9 @@ footer .copyright {
 }
 @media screen and (min-width: 768px) {
   .shows-list__item--value-highlighted {
-    margin: 1.5rem;
+    margin: 0;
+    margin-left: 2rem;
+    margin-right: 6rem;
     font-size: 1.3rem;
     text-align: left;
   }
@@ -694,6 +698,7 @@ footer .copyright {
     font-size: 1rem;
     text-align: left;
     width: 30%;
+    margin: 2rem;
   }
 }
 .shows-list__button {
@@ -710,7 +715,8 @@ footer .copyright {
 @media screen and (min-width: 768px) {
   .shows-list__button {
     font-size: 1.3rem;
-    padding: 1rem 2.5rem;
+    padding: 1rem 1rem;
+    width: 16rem;
   }
 }
 @media screen and (min-width: 1024px) {
